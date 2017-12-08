@@ -10,11 +10,11 @@ import Foundation
 
 class Game {
     
-    init() {
-        print("Initialisation des variables")
-    }
+    let player1: Player
+    let player2: Player
     
-    func start() {
-        print("Le jeu commence")
+    init() {
+        player1 = Player()
+        player2 = Player()
     }
 }

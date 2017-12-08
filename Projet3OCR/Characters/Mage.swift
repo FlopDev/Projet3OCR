@@ -9,6 +9,7 @@
 import Foundation
 
 class Mage: Character {
+    
     init(name: String) {
         super.init(name: name, damage: 10, life: 75)
     }
