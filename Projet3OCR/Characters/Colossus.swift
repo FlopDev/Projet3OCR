@@ -1,5 +1,5 @@
 //
-//  Colosse.swift
+//  Colossus.swift
 //  Projet3OCR
 //
 //  Created by Florian Peyrony on 13/10/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Colosse: Character {
+class Colossus: Character {
     
     init(name: String) {
         super.init(name: name, damage: 5, life: 105)

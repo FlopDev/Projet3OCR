@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB22DA361F90D43D006D388F /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22DA351F90D43D006D388F /* Dwarf.swift */; };
-		CB22DA381F90D458006D388F /* Colosse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22DA371F90D458006D388F /* Colosse.swift */; };
+		CB22DA381F90D458006D388F /* Colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22DA371F90D458006D388F /* Colossus.swift */; };
 		CB22DA3A1F90D46C006D388F /* Fighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22DA391F90D46C006D388F /* Fighter.swift */; };
 		CB27437F1FD9DD2E00B8AF83 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB27437E1FD9DD2E00B8AF83 /* Player.swift */; };
 		CB2F37E81F8BBDED004B2B66 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2F37E71F8BBDED004B2B66 /* main.swift */; };
@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		CB22DA351F90D43D006D388F /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
-		CB22DA371F90D458006D388F /* Colosse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colosse.swift; sourceTree = "<group>"; };
+		CB22DA371F90D458006D388F /* Colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colossus.swift; sourceTree = "<group>"; };
 		CB22DA391F90D46C006D388F /* Fighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fighter.swift; sourceTree = "<group>"; };
 		CB27437E1FD9DD2E00B8AF83 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		CB2F37E41F8BBDED004B2B66 /* Projet3OCR */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Projet3OCR; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +85,7 @@
 			children = (
 				CBC133AC1FA3AFBD00026DE7 /* Character.swift */,
 				CB22DA391F90D46C006D388F /* Fighter.swift */,
-				CB22DA371F90D458006D388F /* Colosse.swift */,
+				CB22DA371F90D458006D388F /* Colossus.swift */,
 				CB22DA351F90D43D006D388F /* Dwarf.swift */,
 				CB2F37F01F8BBE3E004B2B66 /* Mage.swift */,
 			);
@@ -169,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB22DA3A1F90D46C006D388F /* Fighter.swift in Sources */,
-				CB22DA381F90D458006D388F /* Colosse.swift in Sources */,
+				CB22DA381F90D458006D388F /* Colossus.swift in Sources */,
 				CB2F37F11F8BBE3E004B2B66 /* Mage.swift in Sources */,
 				CB22DA361F90D43D006D388F /* Dwarf.swift in Sources */,
 				CBC133AD1FA3AFBD00026DE7 /* Character.swift in Sources */,
