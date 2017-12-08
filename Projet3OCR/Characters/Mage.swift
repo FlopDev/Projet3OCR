@@ -9,9 +9,9 @@
 import Foundation
 
 class Mage: Character {
-    
-    init() {
-        
+    var heal = 50
+    init(name: String) {
+        super.init(name: name, damage: 0, life: 75)
     }
 }
 
