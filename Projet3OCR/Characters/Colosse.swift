@@ -11,7 +11,7 @@ import Foundation
 class Colosse: Character {
     
     init(name: String) {
-        super.init(name: name, damage: 5, life: 120)
+        super.init(name: name, damage: 5, life: 105)
     }
 }
 
