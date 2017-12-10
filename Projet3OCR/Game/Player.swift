@@ -9,18 +9,13 @@
 import Foundation
 
 class Player {
-    
-    let aFighter: Character
-    let aColossus: Character
-    let aDwarf: Character
-    let aMage: Character
     var characters: [Character] = []
     
     init() {
-        aFighter = Fighter(name: "Kévin")
-        aColossus = Colossus(name: "Florian")
-        aDwarf = Dwarf(name: "Lucien")
-        aMage = Mage(name: "Camille")
+        let aFighter = Fighter(name: "Kévin")
+        let aColossus = Colossus(name: "Florian")
+        let aDwarf = Dwarf(name: "Lucien")
+        let aMage = Mage(name: "Camille")
         characters.append(aFighter)
         characters.append(aColossus)
         characters.append(aDwarf)
