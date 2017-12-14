@@ -10,11 +10,30 @@ import Foundation
 
 class Game {
     
-    let player1: Player
-    let player2: Player
+    let playerOne: Player
+    let playerTwo: Player
     
     init() {
-        player1 = Player()
-        player2 = Player()
+        playerOne = Player()
+        playerTwo = Player()
+    }
+    
+    func start() {
+        introduce()
+        setup()
+        
+    }
+    
+    func introduce() {
+        print("Bienvenue dans FlopGame")
+        // Présenter le jeu complet ainsi que les règles
+    }
+    
+    func setup() {
+        print("Joueur 1 choisis son équipe de trois personnages")
+        playerOne.chooseTeam()
+        
+        print("Joueur 2 choisis son équipe de trois personnages")
+        playerTwo.chooseTeam()
     }
 }

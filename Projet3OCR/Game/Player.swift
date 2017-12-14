@@ -12,15 +12,17 @@ class Player {
     var characters: [Character] = []
     
     init() {
-        let aFighter = Fighter(name: "Kévin")
-        let aColossus = Colossus(name: "Florian")
-        let aDwarf = Dwarf(name: "Lucien")
-        let aMage = Mage(name: "Camille")
-        characters.append(aFighter)
-        characters.append(aColossus)
-        characters.append(aDwarf)
-        characters.append(aMage)
         
+    }
+    
+    func chooseTeam() {
+        // Ici choisis le type de character
+        // Choisisr son nom
+        // Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team
+        // On ajoute dans le tableau le new chaeacter
+        // On repeter l'action 3 fois.
+        print("équipe complete")
+        // Afficher a l'utilisateur son équipe complete
     }
 }
 
