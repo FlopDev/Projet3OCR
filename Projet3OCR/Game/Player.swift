@@ -18,9 +18,8 @@ class Player {
     func chooseTeam() {
         // Ici choisis le type de character
         let maxCharacter = 3
-        var characterInArray = 0
         
-        while characterInArray < maxCharacter {  // On repete l'action 3 fois.
+        while characters.count < maxCharacter {  // On repete l'action 3 fois.
             
             print(""
                 + "\n1. Rentrer 1 pour le combattant "
@@ -35,8 +34,7 @@ class Player {
                 print("Veuillez rentre un nom à votre combattant : ")
                 if let fighterName = readLine() { // Choisisr son nom
                     let aFighter = Fighter(name: fighterName)
-                        characters.append(aFighter) // On ajoute dans le tableau le new chaeacter
-                    characterInArray += 1
+                        characters.append(aFighter) // On ajoute dans le tableau le new character
                     }
                     
                 case 2 : print("Vous avez choisis un Colosse (105PV/5DGT)")
@@ -46,7 +44,6 @@ class Player {
                     for _ in characters {
                         characters.append(aColossus)
                     }
-                    characterInArray += 1
                     }
                     
                 case 3 : print("Vous avez choisis un Nain (95PV/15DGT)")
@@ -54,7 +51,6 @@ class Player {
                 if let dwarfName = readLine() {
                     let aDwarf = Dwarf(name: dwarfName)
                         characters.append(aDwarf)
-                    characterInArray += 1
                     }
                     
                 case 4 : print("Vous avez choisis un Mage (75PV/10DGT)")
@@ -62,8 +58,6 @@ class Player {
                 if let mageName = readLine() {
                     let aMage = Mage(name: mageName)
                         characters.append(aMage)
-                    
-                    characterInArray += 1
                     }
                     
                 default : print("Vous vous êtes trompés")
