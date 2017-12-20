@@ -2,7 +2,7 @@
 //  Game.swift
 //  Projet3OCR
 //
-//  Created by Florian Peyrony on 26/10/2017.
+//  Created by Florian Peyrony on 07/12/2017.
 //  Copyright © 2017 Florian Peyrony. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 
 class Game {
     
-    let playerOne: Player
+    let playerOne: Player // Create my two players
     let playerTwo: Player
     
     init() {
@@ -18,13 +18,13 @@ class Game {
         playerTwo = Player()
     }
     
-    func start() {
+    func start() { // func for launching game
         introduce()
         setup()
         
     }
     
-    func introduce() {
+    func introduce() { // func who explain rules of the game
         print("Bienvenue dans FlopGame")
         print("")
         print("FlopGame est un jeu qui opposera deux joueurs dans une lutte sanglante ou le gagnant devra tuer tout les personnages ennemis.")
@@ -41,11 +41,9 @@ class Game {
         print("Enfin si un personnages n'a plus de point de vie, il meurt, et ne peut pas être réanimé par le mage.")
         print("Si toute l'équipe d'un joueur est morte, il perd la partie.")
         print("")
-        
-        // Présenter le jeu complet ainsi que les règles
     }
     
-    func setup() {
+    func setup() { // func where making clearly the step of game
         print("Joueur 1 choisis son équipe de trois personnages")
         playerOne.chooseTeam()
         

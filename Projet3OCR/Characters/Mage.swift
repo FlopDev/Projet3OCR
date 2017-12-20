@@ -2,7 +2,7 @@
 //  Mage.swift
 //  Projet3OCR
 //
-//  Created by Florian Peyrony on 09/10/2017.
+//  Created by Florian Peyrony on 07/12/2017.
 //  Copyright © 2017 Florian Peyrony. All rights reserved.
 //
 
@@ -15,3 +15,4 @@ class Mage: Character {
     }
 }
 
+// Mage need heal, I need change mage's propriety
