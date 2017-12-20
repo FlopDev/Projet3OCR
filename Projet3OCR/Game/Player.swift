@@ -31,6 +31,7 @@ class Player {
                 switch choice {
                     
                 case 1 : print("Vous avez choisis un Combattant (100PV/10DGT)")
+                print("")
                 print("Veuillez rentre un nom à votre combattant : ")
                 if let fighterName = readLine() { // Choisisr son nom
                     let aFighter = Fighter(name: fighterName)
@@ -38,15 +39,15 @@ class Player {
                     }
                     
                 case 2 : print("Vous avez choisis un Colosse (105PV/5DGT)")
+                print("")
                 print("Veuillez rentrer un nom à votre colosse: ")
                 if let colossusName = readLine() {
                     let aColossus = Colossus(name: colossusName)
-                    for _ in characters {
                         characters.append(aColossus)
-                    }
                     }
                     
                 case 3 : print("Vous avez choisis un Nain (95PV/15DGT)")
+                print("")
                 print("Veuillez rentrer un nom à votre nain: ")
                 if let dwarfName = readLine() {
                     let aDwarf = Dwarf(name: dwarfName)
@@ -54,6 +55,7 @@ class Player {
                     }
                     
                 case 4 : print("Vous avez choisis un Mage (75PV/10DGT)")
+                print("")
                 print("Veuillez rentrer un nom à votre mage: ")
                 if let mageName = readLine() {
                     let aMage = Mage(name: mageName)
@@ -65,10 +67,13 @@ class Player {
                 }
             }
         }
-        print(characters.count)
+        print("")
+        print("Voici vos trois personnages :")
         for character in characters {
             print("\(character.name), \(character.life) PV, \(character.damage) DGT")
+            
         }
+        print("")
     }
 }
 // Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team
