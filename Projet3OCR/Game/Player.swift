@@ -11,6 +11,21 @@ import Foundation
 class Player {                                               // We have got 2 players
     var characters: [Character] = []                         // We create this array for add the chozen characters of each players
     
+    func charactersList() {
+        print(""
+            + "\n1. Rentrer 1 pour le Combattant "        //
+            + "\n2. Rentrer 2 pour le Colosse "           //
+            + "\n3. Rentrer 3 pour le Nain "              // character's list
+            + "\n4. Rentrer 4 pour le Mage ")
+    }
+    func characterTeamView() {
+        print("")                                            // Player can see his full team of 3 characters, their lifes, domages, and names
+        print("Voici vos trois personnages :")
+        for character in characters {
+            print("\(character.name), \(character.life) PV, \(character.damage) DGT")
+        }
+    }
+    
     init() {
         
     }
@@ -19,12 +34,7 @@ class Player {                                               // We have got 2 pl
         let maxCharacter = 3                                  //
                                                               // We need choose 3 characters for each players
         while characters.count < maxCharacter {               //
-            
-            print(""
-                + "\n1. Rentrer 1 pour le Combattant "        //
-                + "\n2. Rentrer 2 pour le Colosse "           //
-                + "\n3. Rentrer 3 pour le Nain "              // character's list
-                + "\n4. Rentrer 4 pour le Mage ")             //
+            charactersList()
             
             if let choice = Int(readLine()!) {
                 switch choice {
@@ -32,7 +42,7 @@ class Player {                                               // We have got 2 pl
                 case 1 : print("Vous avez choisis un Combattant (100PV/10DGT)") // Player choose a fighter
                 print("")
                 print("Veuillez rentre un nom à votre combattant : ")
-                if let fighterName = readLine() {            // He gives a name to the fighter
+                if let fighterName = readLine() {              // He gives a name to the fighter
                     let aFighter = Fighter(name: fighterName)
                     characters.append(aFighter)              // we add the fighter(with a name) in characters, array of each player
                     }
@@ -67,17 +77,9 @@ class Player {                                               // We have got 2 pl
                 }
             }
         }
-        print("")                                            // Player can see his full team of 3 characters, their lifes, domages, and names
-        print("Voici vos trois personnages :")
-        for character in characters {
-            print("\(character.name), \(character.life) PV, \(character.damage) DGT")
-            
+        characterTeamView()
         }
-        print("")
     }
-}
+
                                                              // Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team
-
-
-// FUNC DESCRIPTION
 
