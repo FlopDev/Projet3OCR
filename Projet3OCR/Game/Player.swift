@@ -12,19 +12,25 @@ class Player {                                               // We have got 2 pl
     var characters: [Character] = []                         // We create this array for add the chozen characters of each players
     
     func charactersList() {
+        print("")
+        print("Vous avez actuellement \(characters.count) personnages dans votre équipe")
         print(""
-            + "\n1. Rentrer 1 pour le Combattant "        //
-            + "\n2. Rentrer 2 pour le Colosse "           //
-            + "\n3. Rentrer 3 pour le Nain "              // character's list
-            + "\n4. Rentrer 4 pour le Mage ")
+            + "\n1. Rentrer 1 pour choisir un Combattant "        //
+            + "\n2. Rentrer 2 pour choisir un Colosse "           //
+            + "\n3. Rentrer 3 pour choisir un Nain "              // character's list
+            + "\n4. Rentrer 4 pour choisir un Mage "
+        )
+        print("")
     }
-    func characterTeamView() {
+    func teamView() {
         print("")                                            // Player can see his full team of 3 characters, their lifes, domages, and names
         print("Voici vos trois personnages :")
         for character in characters {
             print("\(character.name), \(character.life) PV, \(character.damage) DGT")
         }
+        print("print")
     }
+    
     
     init() {
         
@@ -39,32 +45,25 @@ class Player {                                               // We have got 2 pl
             if let choice = Int(readLine()!) {
                 switch choice {
                     
-                case 1 : print("Vous avez choisis un Combattant (100PV/10DGT)") // Player choose a fighter
-                print("")
-                print("Veuillez rentre un nom à votre combattant : ")
+                case 1 : Fighter.description()
                 if let fighterName = readLine() {              // He gives a name to the fighter
                     let aFighter = Fighter(name: fighterName)
                     characters.append(aFighter)              // we add the fighter(with a name) in characters, array of each player
                     }
                     
-                case 2 : print("Vous avez choisis un Colosse (105PV/5DGT)")
-                print("")
-                print("Veuillez rentrer un nom à votre colosse: ")
+                case 2 : Colossus.desciption()
                 if let colossusName = readLine() {
                     let aColossus = Colossus(name: colossusName)
                     characters.append(aColossus)
                     }
                     
-                case 3 : print("Vous avez choisis un Nain (95PV/15DGT)")
-                print("")
-                print("Veuillez rentrer un nom à votre nain: ")
+                case 3 : Dwarf.description()
                 if let dwarfName = readLine() {
                     let aDwarf = Dwarf(name: dwarfName)
                     characters.append(aDwarf)
                     }
                     
-                case 4 : print("Vous avez choisis un Mage (75PV/10DGT)")
-                print("")
+                case 4 : Mage.description()
                 print("Veuillez rentrer un nom à votre mage: ")
                 if let mageName = readLine() {
                     let aMage = Mage(name: mageName)
@@ -77,7 +76,7 @@ class Player {                                               // We have got 2 pl
                 }
             }
         }
-        characterTeamView()
+        teamView()
         }
     }
 

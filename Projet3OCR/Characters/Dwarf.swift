@@ -10,6 +10,14 @@ import Foundation
 
 class Dwarf: Character {
     
+    static func description() {
+        print("")
+        print("Je suis un Nain, j'ai 95 HP et 15 DGT")
+        print("")
+        print("Veuillez me donner un nom :")
+        print("")
+    }
+    
     init(name: String) {
         super.init(name: name, damage: 15, life: 95)
     }

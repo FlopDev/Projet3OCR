@@ -29,7 +29,7 @@ class Game {
         print("")
         print("FlopGame est un jeu qui opposera deux joueurs dans une lutte sanglante ou le gagnant devra tuer tout les personnages ennemis.")
         print("")
-        print("Dans un premier temps, chaque joueur devra constituer son équipe d'au moins trois personnages, puis nommer chaque personnage d'un nom unique")
+        print("Dans un premier temps, chaque joueur devra constituer son équipe d'au moins trois personnages, puis nommer chaque personnage d'un nom unique.")
         print("Les personnages ?"
             + "\n1. Le Combattant, un guerrier avec 100 Points de Vie et infligeant 10 degats"
             + "\n2. Le Colosse, un géant robuste mais peu aggressif avec 115PV, 5 DGT"
@@ -44,10 +44,10 @@ class Game {
     }
     
     func setup() { // func where making clearly the step of game
-        print("Joueur 1 choisis son équipe de trois personnages")
+        print("Joueur 1 choisit son équipe de trois personnages")
         playerOne.chooseTeam()
         
-        print("Joueur 2 choisis son équipe de trois personnages")
+        print("Joueur 2 choisit son équipe de trois personnages")
         playerTwo.chooseTeam()
     }
 }
