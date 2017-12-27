@@ -14,8 +14,7 @@ class Dwarf: Character {
         print("")
         print("Je suis un Nain, j'ai 95 HP et 15 DGT")
         print("")
-        print("Veuillez me donner un nom :")
-        print("")
+        
     }
     
     init(name: String) {

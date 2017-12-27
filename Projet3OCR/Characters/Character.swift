@@ -13,6 +13,14 @@ class Character { // Main class from each character "build"
     var damage: Int
     var name: String
     
+    func namedCharacter() {
+        print("Veuillez me donner un nom :")
+        print("")
+        if let characterName = readLine() {
+            self.name = characterName
+        }
+    }
+    
     init(name: String, damage: Int, life: Int) {
         self.name = name
         self.damage = damage

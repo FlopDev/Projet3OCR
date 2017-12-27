@@ -28,9 +28,9 @@ class Player {                                               // We have got 2 pl
         for character in characters {
             print("\(character.name), \(character.life) PV, \(character.damage) DGT")
         }
-        print("print")
+        print("")
+        print("")
     }
-    
     
     init() {
         
@@ -45,32 +45,28 @@ class Player {                                               // We have got 2 pl
             if let choice = Int(readLine()!) {
                 switch choice {
                     
-                case 1 : Fighter.description()
-                if let fighterName = readLine() {              // He gives a name to the fighter
-                    let aFighter = Fighter(name: fighterName)
-                    characters.append(aFighter)              // we add the fighter(with a name) in characters, array of each player
-                    }
+                case 1 : 
+                    let aFigther = Fighter(name : "")
+                    aFigther.namedCharacter()
+                    characters.append(aFigther)
+                
                     
-                case 2 : Colossus.desciption()
-                if let colossusName = readLine() {
-                    let aColossus = Colossus(name: colossusName)
+                case 2 :
+                    let aColossus = Colossus(name: "")
+                    aColossus.namedCharacter()
                     characters.append(aColossus)
-                    }
                     
-                case 3 : Dwarf.description()
-                if let dwarfName = readLine() {
-                    let aDwarf = Dwarf(name: dwarfName)
+                case 3 :
+                    let aDwarf = Dwarf(name: "")
+                    aDwarf.namedCharacter()
                     characters.append(aDwarf)
-                    }
                     
-                case 4 : Mage.description()
-                print("Veuillez rentrer un nom à votre mage: ")
-                if let mageName = readLine() {
-                    let aMage = Mage(name: mageName)
-                    characters.append(aMage)
-                    }
+                case 4 :
+                    let aMage = Mage(name: "")
+                    aMage.namedCharacter()
+                    characters.append(aMage)    
                     
-                default : print("Vous vous êtes trompés")
+                default : print("Vous vous êtes trompé")
                 print("")
                     
                 }

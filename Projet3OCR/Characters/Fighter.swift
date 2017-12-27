@@ -9,16 +9,15 @@
 import Foundation
 
 class Fighter: Character {
-    
-    static func description() {
+
+
+    init(name: String) {
         print("")
         print("Je suis un Combattant, je dispose de 100 HP et 10 DGT")
         print("")
-        print("Veuillez me donner un nom :")
-        print("")
-    }
-    init(name: String) {
+        
         super.init(name: name, damage: 10, life: 100) // fighter's propriety
+       
     }
 }
 
