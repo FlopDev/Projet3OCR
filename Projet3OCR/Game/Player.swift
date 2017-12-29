@@ -12,7 +12,7 @@ import Foundation
  // We have got 2 players in this game
 class Player {
     
-     // We create this array for add the chozen characters of each players
+     // We create this array to add the chozen characters of each players
     var characters: [Character] = []
     
     // character's list of game
@@ -65,9 +65,6 @@ class Player {
         }
     }
     
-    init() {
-    }
-    
     func chooseTeam() {
         let maxCharacter = 3
         
@@ -78,7 +75,11 @@ class Player {
         }
         teamView()
     }
+    
+    init() {
+    }
+    
 }
 
-                                                             // Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team
+// Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team
 
