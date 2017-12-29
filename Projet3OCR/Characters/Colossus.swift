@@ -10,11 +10,8 @@ import Foundation
 
 class Colossus: Character {
 
-    init(name: String) {
-        print("")
-        print("Je suis un Colosse, j'ai 105 PV et 5 DGT")
-        print("")
-        super.init(name: name, damage: 5, life: 105)
+    init() {
+        super.init(name: "Colosse", damage: 5, life: 105, typeName: "Colosse")
     }
 }
 

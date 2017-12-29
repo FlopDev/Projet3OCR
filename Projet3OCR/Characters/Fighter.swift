@@ -10,14 +10,8 @@ import Foundation
 
 class Fighter: Character {
 
-
-    init(name: String) {
-        print("")
-        print("Je suis un Combattant, je dispose de 100 HP et 10 DGT")
-        print("")
-        
-        super.init(name: name, damage: 10, life: 100) // fighter's propriety
-       
+    init() {
+        super.init(name: "Combattant", damage: 10, life: 100, typeName: "Combattant") // fighter's propriety
     }
 }
 

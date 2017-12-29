@@ -9,16 +9,9 @@
 import Foundation
 
 class Dwarf: Character {
-    
-    static func description() {
-        print("")
-        print("Je suis un Nain, j'ai 95 HP et 15 DGT")
-        print("")
-        
-    }
-    
-    init(name: String) {
-        super.init(name: name, damage: 15, life: 95)
+
+    init() {
+        super.init(name: "Nain", damage: 15, life: 95, typeName: "Nain")
     }
 }
 

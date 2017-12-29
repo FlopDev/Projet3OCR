@@ -8,23 +8,27 @@
 
 import Foundation
 
-class Character { // Main class from each character "build"
+// Main class from each character "build"
+class Character {
     var life: Int
     var damage: Int
     var name: String
+    var typeName: String
     
+    // Func who give a name to a character FROM the player
     func namedCharacter() {
-        print("Veuillez me donner un nom :")
-        print("")
+        print("\nVeuillez me donner un nom :\n")
         if let characterName = readLine() {
-            self.name = characterName
+            name = characterName
+            print("\nJe suis un \(typeName), je m'appel \(name) je dispose de \(life)HP et \(damage)DGT\n")
         }
     }
     
-    init(name: String, damage: Int, life: Int) {
+    init(name: String, damage: Int, life: Int, typeName: String) {
         self.name = name
         self.damage = damage
         self.life = life
+        self.typeName = typeName
     }
 }
 
