@@ -23,7 +23,7 @@ class Game {
     func start() {
         introduce()
         setup()
-        
+        play()
     }
     
     // func who explain rules of the game
@@ -49,4 +49,23 @@ class Game {
         print("Joueur 2 choisit son équipe de trois personnages")
         playerTwo.chooseTeam()
     }
+    
+    func play() {
+        print("Le jeu commence !")
+        // Le joueur 1 choisit 1 character de son équipe
+        // 1 coffre apparait, avec a l'interieur une arme aléatoire, le personnage s'en équipe automatiquement (derniere chose a realiser)
+        // Le joueur 1 choisit 1 character de l'équipe adverse pour l'attaquer
+        // Ou le joueur 1 choisit le mage pour soigner 1 character de son équipe
+        // L'action (degat ou soin sur personnage allié ou ennemis)
+        
+        // Meme chose pour le joueur 2
+        
+        // On vérifie la life de tt les characters pour s'assurer qu'un n'est pas mort dans les 2 teams
+        // Si un joueur meurt, on le sort du tableau characters
+    
+        
+        // Si tt les characters d'une team sont morts, alors on sort de la boucle, le jeu s'arrete
+        // print("Le joueur X a gagné !!")
+    }
+    
 }

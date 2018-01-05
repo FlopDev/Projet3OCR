@@ -15,24 +15,18 @@ class Player {
      // We create this array to add the chozen characters of each players
     var characters: [Character] = []
     
+    init() {
+    }
+    
     // character's list of game
     func charactersList() {
-        print("\nVous avez actuellement \(characters.count) personnage(s) dans votre équipe\n")
+        print("\nVous avez actuellement \(characters.count) personnage(s) dans votre équipe (\(characters.count)/3)\n")
         print(""
             + "\n1. Rentrer 1 pour choisir un Combattant "
             + "\n2. Rentrer 2 pour choisir un Colosse "
             + "\n3. Rentrer 3 pour choisir un Nain "
             + "\n4. Rentrer 4 pour choisir un Mage \n"
         )
-    }
-    
-    // Player can see his full team of 3 characters, their lifes, domages, and names
-    func teamView() {
-        
-        print("Voici vos trois personnages :")
-        for character in characters {
-            print("\(character.name), \(character.typeName) (\(character.life)PV,\(character.damage)DGT\n")
-        }
     }
     
     func chooseCharacter() {
@@ -45,7 +39,7 @@ class Player {
                 characters.append(aFigther)
                 
             case 2 :
-                let aColossus = Colossus()
+                let colossus = Colossus() //
                 aColossus.namedCharacter()
                 characters.append(aColossus)
                 
@@ -65,6 +59,15 @@ class Player {
         }
     }
     
+    // Player can see his full team of 3 characters, their lifes, domages, and names
+    func teamView() {
+        
+        print("Voici vos trois personnages :")
+        for character in characters {
+            print("\(character.name), \(character.typeName) (\(character.life)PV,\(character.damage)DGT)\n")
+        }
+    }
+    
     func chooseTeam() {
         let maxCharacter = 3
         
@@ -75,10 +78,6 @@ class Player {
         }
         teamView()
     }
-    
-    init() {
-    }
-    
 }
 
 // Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team

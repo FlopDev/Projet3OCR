@@ -15,4 +15,4 @@ class Weapon {
     }
 }
 
-// For step 3
+// For step 2

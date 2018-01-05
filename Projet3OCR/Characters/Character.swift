@@ -20,7 +20,8 @@ class Character {
         print("\nVeuillez me donner un nom :\n")
         if let characterName = readLine() {
             name = characterName
-            print("\nJe suis un \(typeName), je m'appel \(name) je dispose de \(life)HP et \(damage)DGT\n")
+            print("\nJe suis un \(typeName), je m'appelle \(name) je dispose de \(life)HP et \(damage)DGT\n")
+            
         }
     }
     
