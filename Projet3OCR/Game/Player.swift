@@ -34,24 +34,24 @@ class Player {
             switch choice {
                 
             case 1 :
-                let aFigther = Fighter()
-                aFigther.namedCharacter()
-                characters.append(aFigther)
+                let figther = Fighter()
+                figther.namedCharacter()
+                characters.append(figther)
                 
             case 2 :
                 let colossus = Colossus() //
-                aColossus.namedCharacter()
-                characters.append(aColossus)
+                colossus.namedCharacter()
+                characters.append(colossus)
                 
             case 3 :
-                let aDwarf = Dwarf()
-                aDwarf.namedCharacter()
-                characters.append(aDwarf)
+                let dwarf = Dwarf()
+                dwarf.namedCharacter()
+                characters.append(dwarf)
                 
             case 4 :
-                let aMage = Mage()
-                aMage.namedCharacter()
-                characters.append(aMage)
+                let mage = Mage()
+                mage.namedCharacter()
+                characters.append(mage)
                 
             default : print("Vous vous êtes trompé\n")
                 
@@ -78,6 +78,11 @@ class Player {
         }
         teamView()
     }
+    
+    func fight() {
+          print(characters[0].name)
+    }
+    
 }
 
 // Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team

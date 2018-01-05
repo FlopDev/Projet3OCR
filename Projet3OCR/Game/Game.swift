@@ -51,7 +51,12 @@ class Game {
     }
     
     func play() {
-        print("Le jeu commence !")
+        print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
+        print("Joueur 1 rentre le nom d'un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié a soigner dans le cas du mage.")
+        playerOne.teamView()
+        
+      playerOne.fight()
+        
         // Le joueur 1 choisit 1 character de son équipe
         // 1 coffre apparait, avec a l'interieur une arme aléatoire, le personnage s'en équipe automatiquement (derniere chose a realiser)
         // Le joueur 1 choisit 1 character de l'équipe adverse pour l'attaquer
