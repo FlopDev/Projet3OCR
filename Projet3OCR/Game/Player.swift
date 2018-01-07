@@ -62,7 +62,7 @@ class Player {
     // Player can see his full team of 3 characters, their lifes, domages, and names
     func teamView() {
         
-        print("Voici vos trois personnages :")
+        print("Voici les trois personnages :")
         for character in characters {
             print("\(character.name), \(character.typeName) (\(character.life)PV,\(character.damage)DGT)\n")
         }
@@ -79,10 +79,27 @@ class Player {
         teamView()
     }
     
-    func fight() {
-          print(characters[0].name)
+    func selectCharacter() {
+        print("Entrer 1 pour choisir : ", characters[0].name, characters[0].typeName)
+        print("Entrer 2 pour choisir : ", characters[1].name, characters[1].typeName)
+        print("Entrer 3 pour choisir : ", characters[2].name, characters[2].typeName)
+        
+        if let choice = Int(readLine()!) {
+            
+            switch choice {
+                
+            case 1 : print(characters[0].life)
+                
+            case 2 : print(characters[1])
+                
+            case 3 : print(characters[2])
+                
+            default : print("Vous vous êtes trompés")
+            }
+                
+            }
+        print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
     }
-    
 }
 
 // Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team
