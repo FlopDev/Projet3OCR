@@ -14,6 +14,8 @@ class Player {
     
      // We create this array to add the chozen characters of each players
     var characters: [Character] = []
+    var selectedCharacter: Character!
+    var selectedTarget: Character!
     
     init() {
     }
@@ -79,27 +81,60 @@ class Player {
         teamView()
     }
     
+    func selectTarget(characters: [Character]) {
+        print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
+
+        var addition = 1
+        for character in characters {
+            print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
+           addition += 1
+        }
+    
+        if let choice = Int(readLine()!) {
+            switch choice {
+                
+            case 1 : selectedTarget = characters[0]
+                
+            case 2 : selectedTarget =  characters[1]
+                
+            case 3 : selectedTarget = characters[2]
+                
+            default : print("Vous vous êtes trompés")
+            }
+            
+        }
+    }
+    
+    
+    // Refaire avec une boucle pour afficher la team
     func selectCharacter() {
-        print("Entrer 1 pour choisir : ", characters[0].name, characters[0].typeName)
-        print("Entrer 2 pour choisir : ", characters[1].name, characters[1].typeName)
-        print("Entrer 3 pour choisir : ", characters[2].name, characters[2].typeName)
+        var addition = 1
+        for character in characters {
+            print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
+            addition += 1
+        }
         
         if let choice = Int(readLine()!) {
             
             switch choice {
                 
-            case 1 : print(characters[0].life)
+            case 1 : selectedCharacter = characters[0]
                 
-            case 2 : print(characters[1])
+            case 2 : selectedCharacter =  characters[1]
                 
-            case 3 : print(characters[2])
+            case 3 : selectedCharacter = characters[2]
                 
             default : print("Vous vous êtes trompés")
             }
-                
-            }
-        print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
+            
+        }
+        
     }
+    
+    func attack() {
+        print("\(selectedCharacter.name), attacks \(selectedTarget.name)")
+    }
+
 }
 
 // Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team
