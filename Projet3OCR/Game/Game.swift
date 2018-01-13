@@ -51,27 +51,32 @@ class Game {
     }
     
     func play() {
-        print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
-        print("Joueur 1 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
-        playerOne.teamView()
-        playerOne.selectCharacter()
+        repeat {
+            print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
+            print("Joueur 1 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
+            playerOne.teamView()
+            playerOne.selectCharacter()
             // 1 coffre apparait, avec a l'interieur une arme aléatoire, le personnage s'en équipe automatiquement (derniere chose a realiser)
-        playerOne.selectTarget(characters: playerTwo.characters)
-        playerOne.attack()
-       
+            playerOne.selectTarget(characters: playerTwo.characters)
+            playerOne.attack()
+            playerTwo.remove()
+            
+            
+            print("Joueur 2 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
+            playerTwo.teamView()
+            playerTwo.selectCharacter()
+            playerTwo.selectTarget(characters: playerOne.characters)
+            playerTwo.attack()
+            playerOne.remove()
+            
+            // On vérifie la life de tt les characters pour s'assurer qu'un n'est pas mort dans les 2 teams
+            // Si un joueur meurt, on le sort du tableau characters
+            
+            
+            // Si tt les characters d'une team sont morts, alors on sort de la boucle, le jeu s'arrete
+            // print("Le joueur X a gagné !!")
+        } while playerOne.characters.count != 0 || playerTwo.characters.count != 0
         
-        print("Joueur 2 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
-        playerTwo.teamView()
-        playerTwo.selectCharacter()
-        playerTwo.selectTarget(characters: playerOne.characters)
-        playerTwo.attack()
-        
-        // On vérifie la life de tt les characters pour s'assurer qu'un n'est pas mort dans les 2 teams
-        // Si un joueur meurt, on le sort du tableau characters
-    
-        
-        // Si tt les characters d'une team sont morts, alors on sort de la boucle, le jeu s'arrete
-        // print("Le joueur X a gagné !!")
     }
 
 }
