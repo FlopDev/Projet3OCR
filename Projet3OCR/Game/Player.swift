@@ -101,7 +101,6 @@ class Player {
                 
             default : print("Vous vous êtes trompés")
             }
-            
         }
     }
     
@@ -126,13 +125,14 @@ class Player {
                 
             default : print("Vous vous êtes trompés")
             }
-            
         }
-        
     }
     
     func attack() {
-        print("\(selectedCharacter.name), attacks \(selectedTarget.name)")
+        print("\(selectedCharacter.name), attaque \(selectedTarget.name)")
+        
+        selectedTarget.life = selectedTarget.life - selectedCharacter.damage
+        print("\(selectedTarget.name) perd \(selectedCharacter.damage)HP")
     }
 
 }

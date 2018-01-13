@@ -52,19 +52,15 @@ class Game {
     
     func play() {
         print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
-        print("Joueur 1 rentre le nom d'un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié a soigner dans le cas du mage.")
+        print("Joueur 1 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
         playerOne.teamView()
         playerOne.selectCharacter()
+            // 1 coffre apparait, avec a l'interieur une arme aléatoire, le personnage s'en équipe automatiquement (derniere chose a realiser)
         playerOne.selectTarget(characters: playerTwo.characters)
         playerOne.attack()
-
-        // Le joueur 1 choisit 1 character de son équipe
-        // 1 coffre apparait, avec a l'interieur une arme aléatoire, le personnage s'en équipe automatiquement (derniere chose a realiser)
-        // Le joueur 1 choisit 1 character de l'équipe adverse pour l'attaquer
-        // Ou le joueur 1 choisit le mage pour soigner 1 character de son équipe
-        // L'action (degat ou soin sur personnage allié ou ennemis)
+       
         
-        // Meme chose pour le joueur 2
+        print("Joueur 2 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
         playerTwo.teamView()
         playerTwo.selectCharacter()
         playerTwo.selectTarget(characters: playerOne.characters)
