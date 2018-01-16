@@ -149,6 +149,17 @@ class Player {
         }
         
     }
+    func removeByFor() {
+        var incremention = 0
+        for _ in characters {
+            if characters[incremention].life <= 0 {
+                characters.remove(at: incremention)
+            } else {
+                print("Le combat continue")
+            }
+            incremention += 1
+        }
+    }
 }
 
 // Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team

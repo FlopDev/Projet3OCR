@@ -60,7 +60,7 @@ class Game {
             // 1 coffre apparait, avec a l'interieur une arme aléatoire, le personnage s'en équipe automatiquement (derniere chose a realiser)
             playerOne.selectTarget(characters: playerTwo.characters)
             playerOne.attack()
-            playerTwo.remove()
+            playerTwo.removeByFor()
             
             
             print("Joueur 2 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
@@ -68,7 +68,7 @@ class Game {
             playerTwo.selectCharacter()
             playerTwo.selectTarget(characters: playerOne.characters)
             playerTwo.attack()
-            playerOne.remove()
+            playerOne.removeByFor()
             
             // On vérifie la life de tt les characters pour s'assurer qu'un n'est pas mort dans les 2 teams
             // Si un joueur meurt, on le sort du tableau characters
