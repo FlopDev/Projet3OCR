@@ -135,18 +135,19 @@ class Player {
         print("\(selectedTarget.name) perd \(selectedCharacter.damage)HP")
     }
     func remove() {
-        for _ in characters {
+        
             if characters[0].life <= 0 {
                 characters.remove(at: 0)
             }
-            if characters[1].life <= 0 {
+            else if characters[1].life <= 0 {
                 characters.remove(at: 1)
             }
-            if characters[2].life <= 0 {
+            else if characters[2].life <= 0 {
                 characters.remove(at: 2)
-            }
-            
+            } else {
+                print("Continuez le combat !!")
         }
+        
     }
 }
 

@@ -29,7 +29,7 @@ class Game {
     // func who explain rules of the game
     func introduce() {
         print("Bienvenue dans FlopGame\n")
-        print("FlopGame est un jeu qui opposera deux joueurs dans une lutte sanglante où le gagnant devra tuer tous les personnages ennemis\n.")
+        print("FlopGame est un jeu qui opposera deux joueurs dans une lutte sanglante où le gagnant devra tuer tous les personnages ennemis.\n")
         print("Dans un premier temps, chaque joueur devra constituer son équipe de trois personnages sur les 4 mis à disposition (ci-dessous), puis nommer chaque personnage d'un nom unique.")
         print("Les personnages :"
             + "\n1. Le Combattant : un guerrier avec 100 Points de Vie et infligeant 10 points de dégâts"
@@ -51,8 +51,9 @@ class Game {
     }
     
     func play() {
+        print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
         repeat {
-            print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
+            
             print("Joueur 1 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
             playerOne.selectCharacter()
@@ -72,11 +73,16 @@ class Game {
             // On vérifie la life de tt les characters pour s'assurer qu'un n'est pas mort dans les 2 teams
             // Si un joueur meurt, on le sort du tableau characters
             
-            
-            // Si tt les characters d'une team sont morts, alors on sort de la boucle, le jeu s'arrete
+
             // print("Le joueur X a gagné !!")
         } while playerOne.characters.count != 0 || playerTwo.characters.count != 0
         
+        if playerTwo.characters.count == 0 {
+            print("Le joueur 1 a gagné")
+        }
+        if playerOne.characters.count == 0 {
+            print("Le joueur 2 a gagné")
+        }
     }
 
 }
