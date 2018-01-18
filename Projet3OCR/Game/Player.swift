@@ -16,6 +16,7 @@ class Player {
     var characters: [Character] = []
     var selectedCharacter: Character!
     var selectedTarget: Character!
+    var weapons: [Weapon]!
     
     init() {
     }
@@ -108,6 +109,10 @@ class Player {
             }
         }
     
+    func openChest() {
+        print("\(selectedCharacter) recoit un coffre avant de combattre, il s'ouvre, et s'équipe de l'arme trouvée")
+    }
+    
     func selectTarget(characters: [Character]) {
         print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
         
@@ -138,7 +143,7 @@ class Player {
         selectedTarget.life = selectedTarget.life - selectedCharacter.damage
         print("\(selectedTarget.name) perd \(selectedCharacter.damage)HP")
     }
-    
+    // Renomé cette fonction avec un meileur nom : checkTeamLife
     func removeByFor() {
         var incremention = 0
         for _ in characters {

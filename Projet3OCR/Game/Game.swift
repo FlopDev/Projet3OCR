@@ -52,7 +52,7 @@ class Game {
     
     func play() {
         print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
-        repeat {
+        while playerOne.characters.count != 0 || playerTwo.characters.count != 0 {
             
             print("Joueur 1 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
@@ -61,7 +61,9 @@ class Game {
             playerOne.selectTarget(characters: playerTwo.characters)
             playerOne.attack()
             playerTwo.removeByFor()
-            victory()
+            if victory() == true {
+                break
+            }
             
             
             print("Joueur 2 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
@@ -70,25 +72,27 @@ class Game {
             playerTwo.selectTarget(characters: playerOne.characters)
             playerTwo.attack()
             playerOne.removeByFor()
-            victory()
-            
-            
-
-     
-        } while playerOne.characters.count != 0 || playerTwo.characters.count != 0
+            if victory() == true {
+               break
+            }
+        }
+        print("Le jeu est terminé")
         
     }
-    
-    func victory() {
+    // il faudrait renommé la fonction "checkWinner"
+    func victory() -> Bool {
         if playerTwo.characters.count == 0 {
             print("Le joueur 2 n'a plus de personnages dans son équipe")
             print("Le joueur 1 a gagné")
+            return true
             
         }
         if playerOne.characters.count == 0 {
             print("Le joueur 1 n'a plus de personnages dans son équipe")
             print("Le joueur 2 a gagné")
+            return true
         }
+        return false
     }
 
 }

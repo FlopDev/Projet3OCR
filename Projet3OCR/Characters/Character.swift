@@ -14,7 +14,6 @@ class Character {
     var damage: Int
     var name: String
     var typeName: String
-    var weapons: [Weapon]!
     
     // Func who give a name to a character FROM the player
     func namedCharacter() {
@@ -22,10 +21,6 @@ class Character {
         if let characterName = readLine() {
             name = characterName
             print("\nJe suis un \(typeName), je m'appelle \(name) je dispose de \(life)HP et \(damage)DGT\n")
-        }
-        
-    func openChest() {
-        
         }
     }
     
