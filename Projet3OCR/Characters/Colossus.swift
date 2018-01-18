@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Colossus: Character {
+class Colossus : Character {
 
     init() {
         super.init(name: "Colosse", damage: 5, life: 105, typeName: "Colosse")

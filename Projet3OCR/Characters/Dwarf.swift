@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Dwarf: Character {
+class Dwarf : Character {
 
     init() {
         super.init(name: "Nain", damage: 15, life: 95, typeName: "Nain")
