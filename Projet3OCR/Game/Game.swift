@@ -61,6 +61,7 @@ class Game {
             playerOne.selectTarget(characters: playerTwo.characters)
             playerOne.attack()
             playerTwo.removeByFor()
+            victory()
             
             
             print("Joueur 2 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
@@ -69,18 +70,23 @@ class Game {
             playerTwo.selectTarget(characters: playerOne.characters)
             playerTwo.attack()
             playerOne.removeByFor()
+            victory()
             
-            // On vérifie la life de tt les characters pour s'assurer qu'un n'est pas mort dans les 2 teams
-            // Si un joueur meurt, on le sort du tableau characters
             
 
-            // print("Le joueur X a gagné !!")
+     
         } while playerOne.characters.count != 0 || playerTwo.characters.count != 0
         
+    }
+    
+    func victory() {
         if playerTwo.characters.count == 0 {
+            print("Le joueur 2 n'a plus de personnages dans son équipe")
             print("Le joueur 1 a gagné")
+            
         }
         if playerOne.characters.count == 0 {
+            print("Le joueur 1 n'a plus de personnages dans son équipe")
             print("Le joueur 2 a gagné")
         }
     }

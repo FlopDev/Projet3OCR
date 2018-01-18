@@ -9,10 +9,10 @@
 import Foundation
 
 
- // We have got 2 players in this game
+// We have got 2 players in this game
 class Player {
     
-     // We create this array to add the chozen characters of each players
+    // We create this array to add the chozen characters of each players
     var characters: [Character] = []
     var selectedCharacter: Character!
     var selectedTarget: Character!
@@ -80,16 +80,43 @@ class Player {
         }
         teamView()
     }
+        
+        
+    // Select a character in own team of each player, then the character selected will fight a target
+    func selectCharacter() {
+        var addition = 1
+        for character in characters {
+                print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
+                addition += 1
+            }
+            
+            if let choice = Int(readLine()!) {
+                
+                switch choice {
+                    
+                case 1 : selectedCharacter = characters[0]
+                    
+                    
+                case 2 : selectedCharacter =  characters[1]
+                    
+                    
+                case 3 : selectedCharacter = characters[2]
+                        
+                    
+                default : print("Vous vous êtes trompés")
+                }
+            }
+        }
     
     func selectTarget(characters: [Character]) {
         print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
-
+        
         var addition = 1
         for character in characters {
             print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
-           addition += 1
+            addition += 1
         }
-    
+        
         if let choice = Int(readLine()!) {
             switch choice {
                 
@@ -105,42 +132,21 @@ class Player {
     }
     
     
-    // Refaire avec une boucle pour afficher la team
-    func selectCharacter() {
-        var addition = 1
-        for character in characters {
-            print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
-            addition += 1
-        }
-        
-        if let choice = Int(readLine()!) {
-            
-            switch choice {
-                
-            case 1 : selectedCharacter = characters[0]
-                
-            case 2 : selectedCharacter =  characters[1]
-                
-            case 3 : selectedCharacter = characters[2]
-                
-            default : print("Vous vous êtes trompés")
-            }
-        }
-    }
-    
     func attack() {
         print("\(selectedCharacter.name), attaque \(selectedTarget.name)")
         
         selectedTarget.life = selectedTarget.life - selectedCharacter.damage
         print("\(selectedTarget.name) perd \(selectedCharacter.damage)HP")
     }
-
+    
     func removeByFor() {
         var incremention = 0
         for _ in characters {
             if characters[incremention].life <= 0 {
+                print("\(characters[incremention].name) n'a plus de vie... Il meurt")
                 characters.remove(at: incremention)
-               break
+                //we go out from the for if 1 character is dead
+                break
             } else {
                 print("Le combat continue")
             }

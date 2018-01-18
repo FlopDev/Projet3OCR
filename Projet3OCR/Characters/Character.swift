@@ -23,6 +23,12 @@ class Character {
             print("\nJe suis un \(typeName), je m'appelle \(name) je dispose de \(life)HP et \(damage)DGT\n")
             
         }
+        
+    func openChest() {
+            // write here
+        // Int(arc4random_uniform(UInt32('chest')))
+        }
+        
     }
     
     init(name: String, damage: Int, life: Int, typeName: String) {
