@@ -17,4 +17,3 @@ class Weapon {
     
 }
 
-// For step 2

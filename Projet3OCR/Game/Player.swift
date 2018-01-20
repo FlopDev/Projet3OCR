@@ -111,6 +111,11 @@ class Player {
     
     func openChest() {
         print("\(selectedCharacter) recoit un coffre avant de combattre, il s'ouvre, et s'équipe de l'arme trouvée")
+        // I create a sword and a wand
+        let sword = Sword()
+        let wand = Wand()
+        weapons.append(sword)
+        weapons.append(wand)
     }
     
     func selectTarget(characters: [Character]) {
@@ -143,8 +148,8 @@ class Player {
         selectedTarget.life = selectedTarget.life - selectedCharacter.damage
         print("\(selectedTarget.name) perd \(selectedCharacter.damage)HP")
     }
-    // Renomé cette fonction avec un meileur nom : checkTeamLife
-    func removeByFor() {
+    // func who check if a character is dead
+    func checkTeamLife() {
         var incremention = 0
         for _ in characters {
             if characters[incremention].life <= 0 {

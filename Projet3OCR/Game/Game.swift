@@ -60,8 +60,8 @@ class Game {
             // 1 coffre apparait, avec a l'interieur une arme aléatoire, le personnage s'en équipe automatiquement (derniere chose a realiser)
             playerOne.selectTarget(characters: playerTwo.characters)
             playerOne.attack()
-            playerTwo.removeByFor()
-            if victory() == true {
+            playerTwo.checkTeamLife()
+            if checkWinner() == true {
                 break
             }
             
@@ -71,16 +71,16 @@ class Game {
             playerTwo.selectCharacter()
             playerTwo.selectTarget(characters: playerOne.characters)
             playerTwo.attack()
-            playerOne.removeByFor()
-            if victory() == true {
+            playerOne.checkTeamLife()
+            if checkWinner() == true {
                break
             }
         }
         print("Le jeu est terminé")
         
     }
-    // il faudrait renommé la fonction "checkWinner"
-    func victory() -> Bool {
+    // I need ton return boolean for create a condition to break IF one team win
+    func checkWinner() -> Bool {
         if playerTwo.characters.count == 0 {
             print("Le joueur 2 n'a plus de personnages dans son équipe")
             print("Le joueur 1 a gagné")
