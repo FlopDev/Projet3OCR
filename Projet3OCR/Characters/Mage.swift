@@ -9,9 +9,9 @@
 import Foundation
 
 class Mage : Character {
-    
+    var heal: Int = 15
     init() {
-        super.init(name: "Mage", damage: 10, life: 75, typeName: "Mage")
+        super.init(name: "Mage", damage: 0, life: 75, typeName: "Mage")
     }
 }
 

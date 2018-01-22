@@ -81,41 +81,50 @@ class Player {
         }
         teamView()
     }
-        
-        
+    
+    
     // Select a character in own team of each player, then the character selected will fight a target
     func selectCharacter() {
         var addition = 1
         for character in characters {
-                print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
-                addition += 1
-            }
+            print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
+            addition += 1
+        }
+        
+        if let choice = Int(readLine()!) {
             
-            if let choice = Int(readLine()!) {
+            switch choice {
                 
-                switch choice {
-                    
-                case 1 : selectedCharacter = characters[0]
-                    
-                    
-                case 2 : selectedCharacter =  characters[1]
-                    
-                    
-                case 3 : selectedCharacter = characters[2]
-                        
-                    
-                default : print("Vous vous êtes trompés")
-                }
+            case 1 : selectedCharacter = characters[0]
+                
+            case 2 : selectedCharacter =  characters[1]
+                
+            case 3 : selectedCharacter = characters[2]
+                
+            default : print("Vous vous êtes trompés")
             }
         }
+    }
     
     func openChest() {
-        print("\(selectedCharacter) recoit un coffre avant de combattre, il s'ouvre, et s'équipe de l'arme trouvée")
-        // I create a sword and a wand
-        let sword = Sword()
-        let wand = Wand()
-        weapons.append(sword)
-        weapons.append(wand)
+        let randomNumber = Int(arc4random_uniform(3))
+        if randomNumber == 0 {
+            print("\(selectedCharacter) recoit un coffre avant de combattre, il s'ouvre, et s'équipe de l'arme trouvée")
+            // I create a sword and a wand
+            let sword = Sword()
+            let wand = Wand()
+            weapons.append(sword)
+            weapons.append(wand)
+            
+            if selectedCharacter is Mage {
+                print("Le mage \(selectedCharacter.name) recoit un bâton, et s'en équipe")
+            } else {
+                print("Le \(selectedCharacter.typeName) \(selectedCharacter.name) recoit une épée, et s'en équipe")
+            }
+        } else {
+            print("Aucun coffre n'apparaît")
+        }
+        
     }
     
     func selectTarget(characters: [Character]) {
@@ -140,8 +149,7 @@ class Player {
             }
         }
     }
-    
-    
+    // after the selection of a character and a target, the func attack()
     func attack() {
         print("\(selectedCharacter.name), attaque \(selectedTarget.name)")
         

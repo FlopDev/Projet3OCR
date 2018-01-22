@@ -73,7 +73,7 @@ class Game {
             playerTwo.attack()
             playerOne.checkTeamLife()
             if checkWinner() == true {
-               break
+                break
             }
         }
         print("Le jeu est terminé")
@@ -81,18 +81,18 @@ class Game {
     }
     // I need ton return boolean for create a condition to break IF one team win
     func checkWinner() -> Bool {
-        if playerTwo.characters.count == 0 {
+        if playerTwo.characters.isEmpty {
             print("Le joueur 2 n'a plus de personnages dans son équipe")
             print("Le joueur 1 a gagné")
             return true
             
         }
-        if playerOne.characters.count == 0 {
+        if playerOne.characters.count == 0 { // or is empty
             print("Le joueur 1 n'a plus de personnages dans son équipe")
             print("Le joueur 2 a gagné")
             return true
         }
         return false
     }
-
+    
 }
