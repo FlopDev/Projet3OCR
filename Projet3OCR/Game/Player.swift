@@ -113,7 +113,7 @@ class Player {
        
         
         if randomNumber == 0 {
-            print("\(selectedCharacter) recoit un coffre avant de combattre, il s'ouvre, et s'équipe de l'arme trouvée")
+            print("\(selectedCharacter.name) recoit un coffre avant de combattre, il ouvre le coffre...")
             // I create a sword and a wand
             let sword = Sword()
             let wand = Wand()
