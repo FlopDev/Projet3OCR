@@ -11,7 +11,7 @@ import Foundation
 class Colossus : Character {
 
     init() {
-        super.init(name: "Colosse", damage: 5, life: 105, typeName: "Colosse")
+        super.init(name: "Colosse", damage: 15, life: 105, typeName: "Colosse")
     }
 }
 

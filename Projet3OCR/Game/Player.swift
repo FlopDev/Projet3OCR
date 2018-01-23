@@ -108,18 +108,23 @@ class Player {
     
     func openChest() {
         let randomNumber = Int(arc4random_uniform(3))
+    
+        
+       
+        
         if randomNumber == 0 {
             print("\(selectedCharacter) recoit un coffre avant de combattre, il s'ouvre, et s'équipe de l'arme trouvée")
             // I create a sword and a wand
             let sword = Sword()
             let wand = Wand()
-            weapons.append(sword)
-            weapons.append(wand)
-            
+         
+            // If character is Mage, I give him a wand to heal, and if he isn't, i give him a sword to make damage
             if selectedCharacter is Mage {
                 print("Le mage \(selectedCharacter.name) recoit un bâton, et s'en équipe")
+                selectedCharacter.damage += wand.weaponHeal
             } else {
                 print("Le \(selectedCharacter.typeName) \(selectedCharacter.name) recoit une épée, et s'en équipe")
+                selectedCharacter.damage += sword.weaponDomage
             }
         } else {
             print("Aucun coffre n'apparaît")
