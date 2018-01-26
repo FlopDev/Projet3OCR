@@ -16,8 +16,10 @@ class Character {
     var typeName: String
     
     // Func who give a name to a character FROM the player
+    // Je peux pas comparer aux autres characters car je n'est pas acces a [characters]
     func namedCharacter() {
         print("\nVeuillez me donner un nom :\n")
+        
         if let characterName = readLine() {
             name = characterName
             print("\nJe suis un \(typeName), je m'appelle \(name) je dispose de \(life)HP et \(damage)DGT\n")

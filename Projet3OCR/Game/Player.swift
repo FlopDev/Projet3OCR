@@ -18,6 +18,7 @@ class Player {
     var selectedTarget: Character!
     var weapons: [Weapon]!
     
+    
     init() {
     }
     
@@ -62,7 +63,7 @@ class Player {
         }
     }
     
-    // Player can see his full team of 3 characters, their lifes, domages, and names
+    // Player can see his full team of 3 characters, their lifes, domages, and names or the opponent team
     func teamView() {
         
         print("Voici les trois personnages :")
@@ -95,7 +96,7 @@ class Player {
             
             switch choice {
                 
-            case 1 : selectedCharacter = characters[0]
+            case 1 : selectedCharacter = characters[0]  // return characters[0]
                 
             case 2 : selectedCharacter =  characters[1]
                 
@@ -108,10 +109,7 @@ class Player {
     
     func openChest() {
         let randomNumber = Int(arc4random_uniform(3))
-    
-        
-       
-        
+
         if randomNumber == 0 {
             print("\(selectedCharacter.name) recoit un coffre avant de combattre, il ouvre le coffre...")
             // I create a sword and a wand
@@ -119,9 +117,9 @@ class Player {
             let wand = Wand()
          
             // If character is Mage, I give him a wand to heal, and if he isn't, i give him a sword to make damage
-            if selectedCharacter is Mage {
+            if let mage = selectedCharacter as? Mage {
                 print("Le mage \(selectedCharacter.name) recoit un bâton, et s'en équipe")
-                selectedCharacter.damage += wand.weaponHeal
+                mage.heal += wand.weaponHeal
             } else {
                 print("Le \(selectedCharacter.typeName) \(selectedCharacter.name) recoit une épée, et s'en équipe")
                 selectedCharacter.damage += sword.weaponDomage
