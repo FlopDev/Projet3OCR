@@ -56,11 +56,10 @@ class Game {
             
             print("Joueur 1 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
-            playerOne.selectCharacter() // Au lieu de save le personnage choisit dans la variable selectedCharacter contenue dans la classe player , la methode selectCharacter retourne le character choisit et se dernier doit être stocker au retour
-            // 1 coffre apparait, avec a l'interieur une arme aléatoire, le personnage s'en équipe automatiquement (derniere chose a realiser)
-            playerOne.openChest() //voir comment mettre cette fonction dans le character
-            playerOne.selectTarget(characters: playerTwo.characters)
-            playerOne.attack() // c'est le character qui attaque et pas le player, le character attaque une target
+            let ownCharacter1 = playerOne.selectCharacter() 
+            //selectedCharacter.openChest()
+            let opponentCharacter1 =  playerOne.selectTarget(characters: playerTwo.characters)
+            ownCharacter1.attack(target: opponentCharacter1) // c'est le character qui attaque et pas le player, le character attaque une target
             // Louis attaque Kévin
             // selectedCharacter.attack(selectedTarget)
             playerTwo.checkTeamLife()
@@ -71,10 +70,10 @@ class Game {
             
             print("Joueur 2 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerTwo.teamView()
-            playerTwo.selectCharacter()
-            playerTwo.openChest()
-            playerTwo.selectTarget(characters: playerOne.characters)
-            playerTwo.attack()
+            let ownCharacter2 = playerTwo.selectCharacter()
+            //playerTwo.openChest()
+            let opponentCharacter2 = playerTwo.selectTarget(characters: playerOne.characters)
+            ownCharacter2.attack(target: opponentCharacter2)
             playerOne.checkTeamLife()
             if checkWinner() == true {
                 break
