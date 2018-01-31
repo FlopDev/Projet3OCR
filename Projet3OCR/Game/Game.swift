@@ -11,12 +11,12 @@ import Foundation
 class Game {
     
     // Create my two players
-    let playerOne: Player
-    let playerTwo: Player
+    var playerOne: Player
+    var playerTwo: Player
     
     init() {
-        playerOne = Player()
-        playerTwo = Player()
+        playerOne = Player(name: "Joueur 1")
+        playerTwo = Player(name: "Joueur 2")
     }
     
     // func for launching game
@@ -52,30 +52,19 @@ class Game {
     
     func play() {
         print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
-        while playerOne.characters.count != 0 || playerTwo.characters.count != 0 {
-            
-            print("Joueur 1 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
+        while playerOne.characters.count != 0 || playerTwo.characters.count != 0  {
+
+            print("\(playerOne.name) choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
-            let ownCharacter1 = playerOne.selectCharacter() 
-            ownCharacter1.openChest()
-            let opponentCharacter1 =  playerOne.selectTarget(characters: playerTwo.characters)
-            ownCharacter1.attack(target: opponentCharacter1)
+            let ownCharacter = playerOne.selectCharacter()
+            ownCharacter.openChest()
+            let opponentCharacter =  playerOne.selectTarget(characters: playerTwo.characters)
+            ownCharacter.attack(target: opponentCharacter)
             playerTwo.checkTeamLife()
             if checkWinner() == true {
                 break
             }
-            
-            
-            print("Joueur 2 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
-            playerTwo.teamView()
-            let ownCharacter2 = playerTwo.selectCharacter()
-            ownCharacter2.openChest()
-            let opponentCharacter2 = playerTwo.selectTarget(characters: playerOne.characters)
-            ownCharacter2.attack(target: opponentCharacter2)
-            playerOne.checkTeamLife()
-            if checkWinner() == true {
-                break
-            }
+            swap(&playerOne, &playerTwo)
         }
         print("Le jeu est terminé")
         

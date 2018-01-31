@@ -11,17 +11,15 @@ import Foundation
 
 // We have got 2 players in this game
 class Player {
-    
+    var name: String
     // We create this array to add the chozen characters of each players
     var characters: [Character] = []
-    var selectedCharacter: Character
-    var selectedTarget: Character
+   
     var weapons: [Weapon]!
     
     
-    init() {
-        self.selectedCharacter = Character(name: "", damage: 0, life: 0, typeName: "")
-        self.selectedTarget = Character(name: "", damage: 0, life: 0, typeName: "")
+    init(name: String) {
+        self.name = name
     }
     
     // character's list of game
@@ -88,7 +86,7 @@ class Player {
     
     // Select a character in own team of each player, then the character selected will fight a target
     func selectCharacter() -> Character {
-        
+        var perso = Character(name: "", damage: 0, life: 0, typeName: "")
         
         var addition = 1
         for character in characters {
@@ -100,21 +98,22 @@ class Player {
             
             switch choice {
                 
-            case 1 : selectedCharacter = characters[0]
+            case 1 : perso = characters[choice - 1]
                 
-            case 2 : selectedCharacter = characters[1]
+            case 2 : perso = characters[choice - 1]
                 
-            case 3 : selectedCharacter = characters[2]
+            case 3 : perso = characters[choice - 1]
                 
             default : print("Vous vous êtes trompés")
             }
         }
-        return selectedCharacter
+        return perso
     }
 
     func selectTarget(characters: [Character]) -> Character {
         print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
         
+        var target = Character(name: "", damage: 0, life: 0, typeName: "")
         var addition = 1
         for character in characters {
             print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
@@ -124,15 +123,16 @@ class Player {
         if let choice = Int(readLine()!) {
             switch choice {
                 
-            case 1 : selectedTarget = characters[0]
+            case 1 : target = characters[choice - 1]
                 
-            case 2 :  selectedTarget = characters[1]
+            case 2 : target = characters[choice - 1]
                 
-            case 3 : selectedTarget = characters[2]
+            case 3 : target = characters[choice - 1]
                 
             default : print("Vous vous êtes trompés")
             }
-        }; return selectedTarget
+        }
+        return target
     }
 
     // func who check if a character is dead
