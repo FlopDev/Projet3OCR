@@ -26,6 +26,7 @@ class Character {
             name = characterName
             print("\nJe suis un \(typeName), je m'appelle \(name) je dispose de \(life)HP et \(damage)DGT\n")
         }
+    }
         
         func openChest() {
             let randomNumber = Int(arc4random_uniform(3))
@@ -49,7 +50,7 @@ class Character {
             }
             
         }
-    }
+    
     
     // after the selection of a character and a target, the func attack()
     func attack(target: Character) {

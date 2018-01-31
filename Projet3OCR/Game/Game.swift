@@ -57,11 +57,9 @@ class Game {
             print("Joueur 1 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
             let ownCharacter1 = playerOne.selectCharacter() 
-            //selectedCharacter.openChest()
+            ownCharacter1.openChest()
             let opponentCharacter1 =  playerOne.selectTarget(characters: playerTwo.characters)
-            ownCharacter1.attack(target: opponentCharacter1) // c'est le character qui attaque et pas le player, le character attaque une target
-            // Louis attaque Kévin
-            // selectedCharacter.attack(selectedTarget)
+            ownCharacter1.attack(target: opponentCharacter1)
             playerTwo.checkTeamLife()
             if checkWinner() == true {
                 break
@@ -71,7 +69,7 @@ class Game {
             print("Joueur 2 choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerTwo.teamView()
             let ownCharacter2 = playerTwo.selectCharacter()
-            //playerTwo.openChest()
+            ownCharacter2.openChest()
             let opponentCharacter2 = playerTwo.selectTarget(characters: playerOne.characters)
             ownCharacter2.attack(target: opponentCharacter2)
             playerOne.checkTeamLife()
