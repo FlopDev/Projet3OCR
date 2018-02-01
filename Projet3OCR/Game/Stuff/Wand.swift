@@ -1,5 +1,5 @@
 //
-//  Sword.swift
+//  Wand.swift
 //  Projet3OCR
 //
 //  Created by Florian Peyrony on 18/01/2018.
@@ -8,9 +8,11 @@
 
 import Foundation
 
-class Sword : Weapon {
+class Wand : Weapon {
+    var weaponHeal: Int = 20
     
     init() {
-        super.init(weaponDomage: 20)
+        super.init(weaponDomage: 0)
     }
 }
+

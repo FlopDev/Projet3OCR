@@ -14,6 +14,5 @@ class Weapon {
     init(weaponDomage: Int) {
         self.weaponDomage = weaponDomage
     }
-    
 }
 

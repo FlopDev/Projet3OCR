@@ -77,7 +77,7 @@ class Game {
             return true
             
         }
-        if playerOne.characters.count == 0 { // or is empty
+        if playerOne.characters.isEmpty { 
             print("Le joueur 1 n'a plus de personnages dans son équipe")
             print("Le joueur 2 a gagné")
             return true
