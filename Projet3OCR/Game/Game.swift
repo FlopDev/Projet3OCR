@@ -53,7 +53,7 @@ class Game {
     func play() {
         print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
         while playerOne.characters.count != 0 || playerTwo.characters.count != 0  {
-
+            
             print("\(playerOne.name) choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
             let ownCharacter = playerOne.selectCharacter()
@@ -84,5 +84,4 @@ class Game {
         }
         return false
     }
-    
 }

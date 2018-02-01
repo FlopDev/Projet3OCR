@@ -15,4 +15,4 @@ class Mage : Character {
     }
 }
 
-// Mage need heal, I need change mage's propriety
+

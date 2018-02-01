@@ -14,7 +14,7 @@ class Player {
     var name: String
     // We create this array to add the chozen characters of each players
     var characters: [Character] = []
-   
+    
     var weapons: [Weapon]!
     
     
@@ -83,7 +83,6 @@ class Player {
         teamView()
     }
     
-    
     // Select a character in own team of each player, then the character selected will fight a target
     func selectCharacter() -> Character {
         var perso = Character(name: "", damage: 0, life: 0, typeName: "")
@@ -98,18 +97,18 @@ class Player {
             
             switch choice {
                 
-            case 1 : perso = characters[choice - 1]
+            case 1 : perso = characters[0]
                 
-            case 2 : perso = characters[choice - 1]
+            case 2 : perso = characters[1]
                 
-            case 3 : perso = characters[choice - 1]
+            case 3 : perso = characters[2]
                 
             default : print("Vous vous êtes trompés")
             }
         }
         return perso
     }
-
+    
     func selectTarget(characters: [Character]) -> Character {
         print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
         
@@ -123,18 +122,18 @@ class Player {
         if let choice = Int(readLine()!) {
             switch choice {
                 
-            case 1 : target = characters[choice - 1]
+            case 1 : target = characters[0]
                 
-            case 2 : target = characters[choice - 1]
+            case 2 : target = characters[1]
                 
-            case 3 : target = characters[choice - 1]
+            case 3 : target = characters[2]
                 
             default : print("Vous vous êtes trompés")
             }
         }
         return target
     }
-
+    
     // func who check if a character is dead
     func checkTeamLife() {
         var incremention = 0
