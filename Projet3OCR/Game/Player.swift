@@ -109,6 +109,7 @@ class Player {
         
         return perso
     }
+
     
     func selectTarget(characters: [Character]) -> Character {
         print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
