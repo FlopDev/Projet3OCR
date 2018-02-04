@@ -59,8 +59,9 @@ class Game {
             playerOne.teamView()
             let ownCharacter = playerOne.selectCharacter()
             checkChest(selectedCharacter: ownCharacter)
-             // crée une methode checkChest() qui fait un aelatoire, puis selon son resultat, on créera ou pas une instance de Chest, on envoit en parametre le player qui est en train de jouer.
-            // si jamais on créé un Chest, alors on fait player.openChest(chest(qu'o viens de créé): Chest). Dans le constructeur de Chest, c'est la qu'on va gerer si le contenue de chest = wand pour mage et sword pour les autres. que ce soit un sword ou wand, ca sera stocké dans un objet de type Weapon
+            
+             // crée une methode checkChest() qui fait un aelatoire, puis selon son resultat, on créera ou pas une instance de Chest, on envoit en parametre le character qui est en train de jouer.
+            // si jamais on créé un Chest, alors on fait selectedCharacter.openChest(chest: newChest). Dans le constructeur de Chest, c'est la qu'on va gerer si le contenue de chest = wand pour mage et sword pour les autres. que ce soit un sword ou wand, ca sera stocké dans un objet de type Weapon
             let opponentCharacter =  playerOne.selectTarget(characters: playerTwo.characters)
             ownCharacter.attack(target: opponentCharacter)
             playerTwo.checkTeamLife()
@@ -89,12 +90,12 @@ class Game {
     }
     
     func checkChest(selectedCharacter: Character) {
-        
-        let newChest = Chest()
         let randomNumber = Int(arc4random_uniform(3))
-        
+
         if randomNumber == 0 {
+            let newChest = Chest()
             selectedCharacter.openChest(chest: newChest)
+            newChest.openIt(chest: newChest, character: selectedCharacter)
             
         } else {
             print("")

@@ -14,6 +14,7 @@ class Character {
     var damage: Int
     var name: String
     var typeName: String
+  
     
     
     init(name: String, damage: Int, life: Int, typeName: String) {
@@ -36,21 +37,9 @@ class Character {
 
     
     func openChest(chest: Chest) {
+    var newChest = Chest()
         
-            print("\(name) recoit un coffre avant de combattre, il ouvre le coffre...")
-            // I create a sword and a wand
-            let sword = Sword()
-            let wand = Wand()
-            
-            // If character is Mage, I give him a wand to heal, and if he isn't, i give him a sword to make damage
-            if let mage = self as? Mage {
-                print("Le mage \(mage.name) recoit un bâton, et s'en équipe")
-                mage.heal += wand.weaponHeal
-            } else {
-                print("Le \(typeName) \(name) recoit une épée, et s'en équipe")
-                damage += sword.weaponDomage
-            }
-        }
+    }
     
     
     // after the selection of a character and a target, the func attack()

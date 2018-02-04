@@ -113,8 +113,8 @@
 			children = (
 				CB2F37EE1F8BBE33004B2B66 /* Weapon.swift */,
 				CB0978892023BA9900A60C6B /* Wand.swift */,
-				CB09788B2023C5A300A60C6B /* Chest.swift */,
 				CB79AF2620112A1600F4404E /* Sword.swift */,
+				CB09788B2023C5A300A60C6B /* Chest.swift */,
 			);
 			path = Stuff;
 			sourceTree = "<group>";

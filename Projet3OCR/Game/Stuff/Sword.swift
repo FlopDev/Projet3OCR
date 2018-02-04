@@ -13,4 +13,5 @@ class Sword : Weapon {
     init() {
         super.init(weaponDomage: 20)
     }
+    
 }

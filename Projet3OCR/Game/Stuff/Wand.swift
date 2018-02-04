@@ -9,8 +9,7 @@
 import Foundation
 
 class Wand : Weapon {
-    var weaponHeal: Int = 20
-    
+    var weaponHeal = 20
     init() {
         super.init(weaponDomage: 0)
     }
