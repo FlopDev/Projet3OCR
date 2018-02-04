@@ -37,7 +37,6 @@ class Character {
 
     
     func openChest(chest: Chest) {
-    var newChest = Chest()
         
     }
     

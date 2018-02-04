@@ -10,7 +10,7 @@ import Foundation
 
 class Chest {
     init() {
-        openIt(chest: <#T##Chest#>, character: <#T##Character#>)
+      
     }
     
     func openIt(chest: Chest, character: Character) {
