@@ -93,9 +93,9 @@ class Game {
         let randomNumber = Int(arc4random_uniform(3))
 
         if randomNumber == 0 {
-            let newChest = Chest()
+            let newChest = Chest(selectedCharacter: selectedCharacter)
             selectedCharacter.openChest(chest: newChest)
-            newChest.openIt(chest: newChest, character: selectedCharacter)
+        
             
         } else {
             print("")
