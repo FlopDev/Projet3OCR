@@ -95,8 +95,6 @@ class Game {
         if randomNumber == 0 {
             let newChest = Chest(selectedCharacter: selectedCharacter)
             selectedCharacter.openChest(chest: newChest)
-        
-            
         } else {
             print("")
         }

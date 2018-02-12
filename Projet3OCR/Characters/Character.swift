@@ -14,6 +14,7 @@ class Character {
     var damage: Int
     var name: String
     var typeName: String
+    var weapon: Weapon?
   
     
     
@@ -25,7 +26,7 @@ class Character {
     }
     
     // Func who give a name to a character FROM the player
-    // Je peux pas comparer aux autres characters car je n'est pas acces a [characters]
+    // Je peux pas comparer aux autres characters car je n'ait pas acces a [characters]
     func namedCharacter() {
         print("\nVeuillez me donner un nom :\n")
         
@@ -36,8 +37,14 @@ class Character {
     }
 
     
-    func openChest(chest: Chest) {
+    func openChest(chest : Chest) {
+        // Creer une propriété de type Weapon? dans le Character
+        // Lorsque on ouvre un chest on recupere weapon et on la stock dans le weapon du character. Le character est maintenant équipé !!
         
+        // Lorsque le character ataque, on vient infliger a l'ennemis les degats de base du character + les degats de son arme.
+        // Il faut donc tchecker l'optionel de l'arme, si le character est équipé d'une arme, on addition les dommages, sinon, on utilise que ses propres domages a lui.
+        
+        chest.weapon.weaponDomage = damage  
     }
     
     
