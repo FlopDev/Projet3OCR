@@ -41,12 +41,12 @@ class Game {
         print("Si toute l'équipe d'un joueur est morte, il perd la partie.\n")
     }
     
-    // func where making clearly the step of game
+    // func where making clearly the first step of game, each player create his own team of 3 characters
     func setup() {
-        print("Joueur 1 choisit son équipe de trois personnages")
+        print("\(playerOne.name) choisit son équipe de trois personnages")
         playerOne.chooseTeam()
         
-        print("Joueur 2 choisit son équipe de trois personnages")
+        print("\(playerTwo.name) choisit son équipe de trois personnages")
         playerTwo.chooseTeam()
     }
     
@@ -59,9 +59,6 @@ class Game {
             playerOne.teamView()
             let ownCharacter = playerOne.selectCharacter()
             checkChest(selectedCharacter: ownCharacter)
-            
-             // crée une methode checkChest() qui fait un aelatoire, puis selon son resultat, on créera ou pas une instance de Chest, on envoit en parametre le character qui est en train de jouer.
-            // si jamais on créé un Chest, alors on fait selectedCharacter.openChest(chest: newChest). Dans le constructeur de Chest, c'est la qu'on va gerer si le contenue de chest = wand pour mage et sword pour les autres. que ce soit un sword ou wand, ca sera stocké dans un objet de type Weapon
             let opponentCharacter =  playerOne.selectTarget(characters: playerTwo.characters)
             ownCharacter.attack(target: opponentCharacter)
             playerTwo.checkTeamLife()
@@ -89,6 +86,7 @@ class Game {
         return false
     }
     
+    // func who give a random number (1/3) then if the player is lucky, his character open the chest with openChest()
     func checkChest(selectedCharacter: Character) {
         let randomNumber = Int(arc4random_uniform(3))
 

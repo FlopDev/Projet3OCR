@@ -13,23 +13,23 @@ class Player {
     var name: String
     // We create this array to add the chozen characters of each players
     var characters: [Character] = []
-    var weapons: [Weapon]!
     
     init(name: String) {
         self.name = name
     }
     
-    // character's list of game
+    // character's list of game.
     func charactersList() {
         print("\nVous avez actuellement \(characters.count) personnage(s) dans votre équipe (\(characters.count)/3)\n")
         print(""
-            + "\n1. Rentrer 1 pour choisir un Combattant "
-            + "\n2. Rentrer 2 pour choisir un Colosse "
-            + "\n3. Rentrer 3 pour choisir un Nain "
-            + "\n4. Rentrer 4 pour choisir un Mage \n"
+            + "\n1. Rentrer 1 pour choisir un Combattant (100HP;25ATK)"
+            + "\n2. Rentrer 2 pour choisir un Colosse (105HP;15ATK)"
+            + "\n3. Rentrer 3 pour choisir un Nain (95HP;30ATK)"
+            + "\n4. Rentrer 4 pour choisir un Mage (75HP;15HEAL)\n"
         )
     }
     
+    // First step of each player, this func tel which character is avalaible and pick one if the player choose one.
     func chooseCharacter() {
         if let choice = Int(readLine()!) {
             switch choice {
@@ -60,7 +60,7 @@ class Player {
         }
     }
     
-    // Player can see his full team of 3 characters, their lifes, domages, and names or the opponent team
+    // Player can see his full team of 3 characters, their lifes, domages, and names or the opponent team.
     func teamView() {
         print("Voici les trois personnages :")
         
@@ -69,6 +69,7 @@ class Player {
         }
     }
     
+    // func who tel which characters the player can choose, and chose character. each players needs 3 characters, then he see his full team.
     func chooseTeam() {
         let maxCharacter = 3
         
@@ -80,7 +81,7 @@ class Player {
         teamView()
     }
     
-    // Select a character in own team of each player, then the character selected will fight a target
+    // Select a character in own team of each player, then the character selected (perso) is return, and will fight a target.
     func selectCharacter() -> Character {
         var perso = Character(name: "", damage: 0, life: 0, typeName: "")
         var addition = 1
@@ -110,7 +111,7 @@ class Player {
         return perso
     }
 
-    
+    // same that selectedCharacter(), but this func return a target that will be hurt by the perso
     func selectTarget(characters: [Character]) -> Character {
         print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
         var target = Character(name: "", damage: 0, life: 0, typeName: "")
