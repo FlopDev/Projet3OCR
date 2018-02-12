@@ -118,7 +118,7 @@ class Player {
         var addition = 1
         
         for character in characters {
-            print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
+            print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName), \(character.life)HP, \(character.damage)DGT")
             addition += 1
         }
         
@@ -153,7 +153,8 @@ class Player {
               
                 break
             } else {
-                print("Le combat continue")
+                print("")
+                
             }
             
             incremention += 1

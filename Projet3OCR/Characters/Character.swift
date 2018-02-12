@@ -41,6 +41,12 @@ class Character {
         // Creer une propriété de type Weapon? dans le Character
         // Lorsque on ouvre un chest on recupere weapon et on le stock dans le weapon du character. Le character est maintenant équipé !!
         weapon = chest.weapon
+        print("Grâce à mon arme, mes nouveaux dégats s'élèvent à \(damage)DGT")
+    
+        if weapon != nil {
+            damage += (weapon?.weaponDomage)!
+        }
+        
         // Lorsque le character ataque, on vient infliger a l'ennemis les degats de base du character + les degats de son arme.
         // Il faut donc tchecker l'optionel de l'arme, si le character est équipé d'une arme, on addition les dommages, sinon, on utilise que ses propres domages a lui.
     }
@@ -49,10 +55,6 @@ class Character {
     // after the selection of a character and a target, the func attack()
     func attack(target: Character) {
         print("\(name), attaque \(target.name)")
-        
-        if weapon != nil {
-            damage += (weapon?.weaponDomage)!
-        }
         
         target.life = target.life - damage
         print("\(target.name) perd \(damage)HP")

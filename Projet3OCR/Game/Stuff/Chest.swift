@@ -18,6 +18,7 @@ class Chest {
         if let selectedCharacter = selectedCharacter as? Mage {
             print("Le mage \(selectedCharacter.name) recoit un bâton, et s'en équipe")
             weapon = Wand()
+            
         } else {
             print("\(selectedCharacter.name) recoit une épée, et s'en équipe")
            weapon = Sword()
