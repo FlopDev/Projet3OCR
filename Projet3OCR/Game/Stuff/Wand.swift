@@ -9,9 +9,9 @@
 import Foundation
 
 class Wand : Weapon {
-    var weaponHeal = 20
+     var weaponHeal = 20
     init() {
-        super.init(weaponDomage: 0)
+        super.init(damage: 0)
     }
 }
 

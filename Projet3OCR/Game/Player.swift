@@ -36,22 +36,22 @@ class Player {
                 
             case 1:
                 let figther = Fighter()
-                figther.namedCharacter()
+                figther.namedCharacter(arrayOfCharacters: characters)
                 characters.append(figther)
                 
             case 2:
                 let colossus = Colossus() 
-                colossus.namedCharacter()
+                colossus.namedCharacter(arrayOfCharacters: characters)
                 characters.append(colossus)
                 
             case 3:
                 let dwarf = Dwarf()
-                dwarf.namedCharacter()
+                dwarf.namedCharacter(arrayOfCharacters: characters)
                 characters.append(dwarf)
                 
             case 4:
                 let mage = Mage()
-                mage.namedCharacter()
+                mage.namedCharacter(arrayOfCharacters: self.characters)
                 characters.append(mage)
                 
             default:
@@ -113,6 +113,11 @@ class Player {
 
     // same that selectedCharacter(), but this func return a target that will be hurt by the perso
     func selectTarget(characters: [Character]) -> Character {
+        
+        // mettre un if pour savoir si c'est un mage ou pas et afficher veuillez choisir un joueur de notre équipe
+        // On peu réassigner la variable characters présente en parametre en self.characters pour chopper la liste des characters de son équipe et pas celle de l'équipe ennemis
+        
+        
         print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
         var target = Character(name: "", damage: 0, life: 0, typeName: "")
         var addition = 1
@@ -156,11 +161,9 @@ class Player {
                 print("")
                 
             }
-            
             incremention += 1
         }
     }
 }
 
-// Si je suis chaud, verifier que le nom choisis n'existe pas dans sa propre team
 

@@ -9,10 +9,10 @@
 import Foundation
 
 class Weapon {
-    var weaponDomage: Int
+    var damage: Int
     
-    init(weaponDomage: Int) {
-        self.weaponDomage = weaponDomage
+    init(damage: Int) {
+        self.damage = damage
     }
     
 }

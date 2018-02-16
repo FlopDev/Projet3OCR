@@ -16,8 +16,6 @@ class Character {
     var typeName: String
     var weapon: Weapon?
   
-    
-    
     init(name: String, damage: Int, life: Int, typeName: String) {
         self.name = name
         self.damage = damage
@@ -26,8 +24,8 @@ class Character {
     }
     
     // Func who give a name to a character FROM the player
-    // Je peux pas comparer aux autres characters car je n'ait pas acces a [characters]
-    func namedCharacter() {
+    // Je peux pas comparer aux autres characters car je n'ait pas acces a [characters] car pas envoyé en parametre
+    func namedCharacter(arrayOfCharacters: [Character]) {
         print("\nVeuillez me donner un nom :\n")
         
         if let characterName = readLine() {
@@ -38,26 +36,46 @@ class Character {
 
     
     func openChest(chest : Chest) {
-        // Creer une propriété de type Weapon? dans le Character
-        // Lorsque on ouvre un chest on recupere weapon et on le stock dans le weapon du character. Le character est maintenant équipé !!
-        weapon = chest.weapon
-        print("Grâce à mon arme, mes nouveaux dégats s'élèvent à \(damage)DGT")
-    
-        if weapon != nil {
-            damage += (weapon?.weaponDomage)!
-        }
         
-        // Lorsque le character ataque, on vient infliger a l'ennemis les degats de base du character + les degats de son arme.
-        // Il faut donc tchecker l'optionel de l'arme, si le character est équipé d'une arme, on addition les dommages, sinon, on utilise que ses propres domages a lui.
+        if let selectCharacter = self as? Mage {
+            weapon = chest.weapon
+            if let wand = weapon as? Wand {
+            print("Grâce à mon Baton, mes nouveaux soins s'élèvent à \(selectCharacter.heal + wand.weaponHeal)")
+            }
+        } else {
+            weapon = chest.weapon
+            print("Grâce à mon épée, mes nouveaux dégats s'élèvent à \(damage + chest.weapon.damage)DGT")
+        }
     }
+        
     
     
     // after the selection of a character and a target, the func attack()
     func attack(target: Character) {
-        print("\(name), attaque \(target.name)")
         
-        target.life = target.life - damage
-        print("\(target.name) perd \(damage)HP")
+        // on viens tcheker le character qui attaque pour savoir si c'est un mage ou non, et si c'est un mage, on soigne, sinon on attaque
+        
+        if let selectCharacter = self as? Mage {
+            print("\(name), attaque \(target.name)")
+            if let characterWeapon = weapon as? Wand {
+                target.life = target.life + (selectCharacter.heal + characterWeapon.weaponHeal)
+                print("\(target.name) gagne \(selectCharacter.heal + characterWeapon.weaponHeal)HP")
+            } else {
+                target.life = target.life + selectCharacter.heal
+                print("\(target.name) gagne \(selectCharacter.heal)HP")
+            }
+            
+    
+        } else {
+            print("\(name), attaque \(target.name)")
+            
+            if let characterWeapon = weapon {
+                target.life = target.life - (damage + characterWeapon.damage)
+            } else {
+                target.life = target.life - damage
+            }
+            print("\(target.name) perd \(damage)HP")
+        }
     }
 }
 
