@@ -54,12 +54,11 @@ class Game {
         print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
         while playerOne.characters.count != 0 || playerTwo.characters.count != 0  {
 
-            
             print("\(playerOne.name) choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
             let ownCharacter = playerOne.selectCharacter()
             checkChest(selectedCharacter: ownCharacter)
-            let opponentCharacter =  playerOne.selectTarget(characters: playerTwo.characters)
+            let opponentCharacter =  playerOne.selectTarget(characters: playerTwo.characters, selectedCharacter: ownCharacter)
             ownCharacter.attack(target: opponentCharacter)
             playerTwo.checkTeamLife()
             if checkWinner() == true {
@@ -70,6 +69,7 @@ class Game {
         print("Le jeu est terminé")
         
     }
+    
     // I need ton return boolean for create a condition to break IF one team win
     func checkWinner() -> Bool {
         if playerTwo.characters.isEmpty {

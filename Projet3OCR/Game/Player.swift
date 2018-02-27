@@ -51,7 +51,7 @@ class Player {
                 
             case 4:
                 let mage = Mage()
-                mage.namedCharacter(arrayOfCharacters: self.characters)
+                mage.namedCharacter(arrayOfCharacters: characters)
                 characters.append(mage)
                 
             default:
@@ -112,17 +112,23 @@ class Player {
     }
 
     // same that selectedCharacter(), but this func return a target that will be hurt by the perso
-    func selectTarget(characters: [Character]) -> Character {
+    func selectTarget(characters: [Character], selectedCharacter: Character) -> Character {
+        var tmpCharacters = characters
         
+        if let mageCharacter = selectedCharacter as? Mage {
+            print("Veuillez choisir un joueur de votre équipe à soigner :")
+            tmpCharacters = self.characters
+            
+        } else {
+            print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
+        }
         // mettre un if pour savoir si c'est un mage ou pas et afficher veuillez choisir un joueur de notre équipe
         // On peu réassigner la variable characters présente en parametre en self.characters pour chopper la liste des characters de son équipe et pas celle de l'équipe ennemis
         
-        
-        print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
         var target = Character(name: "", damage: 0, life: 0, typeName: "")
         var addition = 1
         
-        for character in characters {
+        for character in tmpCharacters {
             print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName), \(character.life)HP, \(character.damage)DGT")
             addition += 1
         }
@@ -131,13 +137,13 @@ class Player {
             switch choice {
                 
             case 1:
-                target = characters[0]
+                target = tmpCharacters[0]
                 
             case 2:
-                target = characters[1]
+                target = tmpCharacters[1]
                 
             case 3:
-                target = characters[2]
+                target = tmpCharacters[2]
                 
             default:
                 print("Vous vous êtes trompés")
@@ -147,6 +153,7 @@ class Player {
         return target
     }
     
+
     // func who check if a character is dead   //we go out from the for if 1 character is dead
     func checkTeamLife() {
         var incremention = 0
