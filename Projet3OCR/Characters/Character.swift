@@ -50,8 +50,6 @@ class Character {
     // after the selection of a character and a target, the func attack()
     func attack(target: Character) {
         
-        // on viens tcheker le character qui attaque pour savoir si c'est un mage ou non, et si c'est un mage, on soigne, sinon on attaque
-        
         if let selectCharacter = self as? Mage {
             print("\(name), soigne \(target.name)")
             if let characterWeapon = weapon as? Wand {

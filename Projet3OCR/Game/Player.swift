@@ -114,16 +114,15 @@ class Player {
     // same that selectedCharacter(), but this func return a target that will be hurt by the perso
     func selectTarget(characters: [Character], selectedCharacter: Character) -> Character {
         var tmpCharacters = characters
+        var characterSelected = false
         
         if let mageCharacter = selectedCharacter as? Mage {
             print("Veuillez choisir un joueur de votre équipe à soigner :")
             tmpCharacters = self.characters
-            
+         
         } else {
             print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
         }
-        // mettre un if pour savoir si c'est un mage ou pas et afficher veuillez choisir un joueur de notre équipe
-        // On peu réassigner la variable characters présente en parametre en self.characters pour chopper la liste des characters de son équipe et pas celle de l'équipe ennemis
         
         var target = Character(name: "", damage: 0, life: 0, typeName: "")
         var addition = 1
@@ -133,25 +132,36 @@ class Player {
             addition += 1
         }
         
-        if let choice = Int(readLine()!) {
-            switch choice {
-                
-            case 1:
-                target = tmpCharacters[0]
-                
-            case 2:
-                target = tmpCharacters[1]
-                
-            case 3:
-                target = tmpCharacters[2]
-                
-            default:
-                print("Vous vous êtes trompés")
+        while !characterSelected {
+            if let choice = Int(readLine()!) {
+                if choice <= 3 && choice >= 1 {
+                    switch choice {
+                        
+                    case 1:
+                        target = tmpCharacters[0]
+                        characterSelected = true
+                        
+                    case 2:
+                        target = tmpCharacters[1]
+                        characterSelected = true
+                        
+                    case 3:
+                        target = tmpCharacters[2]
+                        characterSelected = true
+                        
+                    default:
+                        print("Vous vous êtes trompés")
+                    }
+                    
+                } else {
+                    print("Le numero du personnage choisit doit être comprit entre 1 et 3")
+                    characterSelected = false
+                }
             }
         }
-        
         return target
     }
+    
     
 
     // func who check if a character is dead   //we go out from the for if 1 character is dead
