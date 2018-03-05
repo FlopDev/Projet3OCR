@@ -14,6 +14,18 @@ class Mage : Character {
     init() {
         super.init(name: "Mage", damage: 0, life: 75, typeName: "Mage")
     }
+    
+    override func attack(target: Character) {
+        print("\(name), soigne \(target.name)")
+        
+        if let characterWeapon = weapon as? Wand {
+            target.life = target.life + (self.heal + characterWeapon.weaponHeal)
+            print("\(target.name) gagne \(self.heal + characterWeapon.weaponHeal)HP")
+        } else {
+            target.life = target.life + self.heal
+            print("\(target.name) gagne \(self.heal)HP")
+        }
+    }
 }
 
 

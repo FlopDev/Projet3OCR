@@ -36,6 +36,7 @@ class Character {
 
     func openChest(chest : Chest) {
         
+        // enelever le if let 
         if let selectCharacter = self as? Mage {
             weapon = chest.weapon
             if let wand = weapon as? Wand {
@@ -49,30 +50,16 @@ class Character {
     
     // after the selection of a character and a target, the func attack()
     func attack(target: Character) {
+        print("\(name), attaque \(target.name)")
         
-        if let selectCharacter = self as? Mage {
-            print("\(name), soigne \(target.name)")
-            if let characterWeapon = weapon as? Wand {
-                target.life = target.life + (selectCharacter.heal + characterWeapon.weaponHeal)
-                print("\(target.name) gagne \(selectCharacter.heal + characterWeapon.weaponHeal)HP")
-            } else {
-                target.life = target.life + selectCharacter.heal
-                print("\(target.name) gagne \(selectCharacter.heal)HP")
-            }
-            
-    
+        if let characterWeapon = weapon {
+            target.life = target.life - (damage + characterWeapon.damage)
+            print("\(target.name) perd \(damage + characterWeapon.damage)HP")
         } else {
-            print("\(name), attaque \(target.name)")
-            
-            if let characterWeapon = weapon {
-                target.life = target.life - (damage + characterWeapon.damage)
-                print("\(target.name) perd \(damage + characterWeapon.damage)HP")
-            } else {
-                target.life = target.life - damage
-                print("\(target.name) perd \(damage)HP")
-            }
-            
+            target.life = target.life - damage
+            print("\(target.name) perd \(damage)HP")
         }
+        
     }
 }
 

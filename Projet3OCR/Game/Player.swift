@@ -110,6 +110,8 @@ class Player {
         
         return perso
     }
+    
+    // Fusionner selectCharacter() et selectTarget() pour n'en faire qu'une seule qu'y s'appelera selectCharacter() et qui sera encore plus courte 
 
     // same that selectedCharacter(), but this func return a target that will be hurt by the perso
     func selectTarget(characters: [Character], selectedCharacter: Character) -> Character {
@@ -133,37 +135,38 @@ class Player {
         }
         
         while !characterSelected {
-            if let choice = Int(readLine()!) {
-                if choice <= 3 && choice >= 1 {
-                    switch choice {
+            if let readline = readLine() {
+                if let choice = Int(readline) {
+                    if choice <= 3 && choice >= 1 {
+                        switch choice {
+                            
+                        case 1:
+                            target = tmpCharacters[0]
+                            characterSelected = true
+                            
+                        case 2:
+                            target = tmpCharacters[1]
+                            characterSelected = true
+                            
+                        case 3:
+                            target = tmpCharacters[2]
+                            characterSelected = true
+                            
+                        default:
+                            print("Vous vous êtes trompés")
+                        }
                         
-                    case 1:
-                        target = tmpCharacters[0]
-                        characterSelected = true
-                        
-                    case 2:
-                        target = tmpCharacters[1]
-                        characterSelected = true
-                        
-                    case 3:
-                        target = tmpCharacters[2]
-                        characterSelected = true
-                        
-                    default:
-                        print("Vous vous êtes trompés")
+                    } else {
+                        print("Le numero du personnage choisit doit être comprit entre 1 et 3")
+                        characterSelected = false
                     }
                     
-                } else {
-                    print("Le numero du personnage choisit doit être comprit entre 1 et 3")
-                    characterSelected = false
                 }
             }
         }
         return target
     }
     
-    
-
     // func who check if a character is dead   //we go out from the for if 1 character is dead
     func checkTeamLife() {
         var incremention = 0
