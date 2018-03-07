@@ -36,16 +36,10 @@ class Character {
 
     func openChest(chest : Chest) {
         
-        // enelever le if let 
-        if let selectCharacter = self as? Mage {
-            weapon = chest.weapon
-            if let wand = weapon as? Wand {
-            print("Grâce à mon Baton, mes nouveaux soins s'élèvent à \(selectCharacter.heal + wand.weaponHeal)")
-            }
-        } else {
+    
             weapon = chest.weapon
             print("Grâce à mon épée, mes nouveaux dégats s'élèvent à \(damage + chest.weapon.damage)DGT")
-        }
+        
     }
     
     // after the selection of a character and a target, the func attack()

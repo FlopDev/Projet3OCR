@@ -111,7 +111,7 @@ class Player {
         return perso
     }
     
-    // Fusionner selectCharacter() et selectTarget() pour n'en faire qu'une seule qu'y s'appelera selectCharacter() et qui sera encore plus courte 
+    // Fusionner selectCharacter() et selectTarget() pour n'en faire qu'une seule qu'y s'appelera selectCharacter() et qui sera encore plus courte
 
     // same that selectedCharacter(), but this func return a target that will be hurt by the perso
     func selectTarget(characters: [Character], selectedCharacter: Character) -> Character {
@@ -160,7 +160,6 @@ class Player {
                         print("Le numero du personnage choisit doit être comprit entre 1 et 3")
                         characterSelected = false
                     }
-                    
                 }
             }
         }
