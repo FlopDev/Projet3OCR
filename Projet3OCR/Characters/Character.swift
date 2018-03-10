@@ -36,10 +36,8 @@ class Character {
 
     func openChest(chest : Chest) {
         
-    
             weapon = chest.weapon
             print("Grâce à mon épée, mes nouveaux dégats s'élèvent à \(damage + chest.weapon.damage)DGT")
-        
     }
     
     // after the selection of a character and a target, the func attack()

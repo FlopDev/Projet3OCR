@@ -82,7 +82,7 @@ class Player {
     }
     
     // Select a character in own team of each player, then the character selected (perso) is return, and will fight a target.
-    func selectCharacter() -> Character {
+    func selectCharacter(characters: [Character]) -> Character {
         var perso = Character(name: "", damage: 0, life: 0, typeName: "")
         var addition = 1
         
@@ -119,7 +119,7 @@ class Player {
         var characterSelected = false
         
         if let mageCharacter = selectedCharacter as? Mage {
-            print("Veuillez choisir un joueur de votre équipe à soigner :")
+            print("Veuillez choisir un joueur de votre équipe à soigner avec votre mage \(mageCharacter.name):")
             tmpCharacters = self.characters
          
         } else {
