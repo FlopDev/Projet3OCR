@@ -85,29 +85,42 @@ class Player {
     func selectCharacter(characters: [Character]) -> Character {
         var perso = Character(name: "", damage: 0, life: 0, typeName: "")
         var addition = 1
+        var characterSelected = false
         
         for character in characters {
             print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
             addition += 1
         }
         
-        if let choice = Int(readLine()!) {
-            switch choice {
-                
-            case 1:
-                perso = characters[0]
-                
-            case 2:
-                perso = characters[1]
-                
-            case 3:
-                perso = characters[2]
-                
-            default:
-                print("Vous vous êtes trompés")
+        while !characterSelected {
+            if let readline = readLine() {
+                if let choice = Int(readline) {
+                    if choice <= 3 && choice >= 1 {
+                        switch choice {
+                            
+                        case 1:
+                            perso = characters[0]
+                            characterSelected = true
+                            
+                        case 2:
+                            perso = characters[1]
+                            characterSelected = true
+                            
+                        case 3:
+                            perso = characters[2]
+                            characterSelected = true
+                            
+                        default:
+                            print("Vous vous êtes trompés")
+                        }
+                        
+                    } else {
+                        print("Le numero du personnage choisit doit être comprit entre 1 et 3")
+                        characterSelected = false
+                    }
+                }
             }
         }
-        
         return perso
     }
     
