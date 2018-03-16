@@ -86,6 +86,12 @@ class Player {
         var perso = Character(name: "", damage: 0, life: 0, typeName: "")
         var addition = 1
         var characterSelected = false
+        var tmpCharacters = characters
+        
+        // if let mageCharacter = selectedCharacter as? Mage {
+          //  print("Veuillez choisir un joueur de votre équipe à soigner avec votre mage \(mageCharacter.name):")
+          //  tmpCharacters = self.characters
+    //}
         
         for character in characters {
             print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
@@ -99,15 +105,15 @@ class Player {
                         switch choice {
                             
                         case 1:
-                            perso = characters[0]
+                            perso = tmpCharacters[0]
                             characterSelected = true
                             
                         case 2:
-                            perso = characters[1]
+                            perso = tmpCharacters[1]
                             characterSelected = true
                             
                         case 3:
-                            perso = characters[2]
+                            perso = tmpCharacters[2]
                             characterSelected = true
                             
                         default:

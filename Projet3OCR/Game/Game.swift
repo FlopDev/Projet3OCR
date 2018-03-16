@@ -56,15 +56,12 @@ class Game {
 
             print("\(playerOne.name) choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
-            let ownCharacter = playerOne.selectCharacter(characters: playerOne.characters)
+             let ownCharacter = playerOne.selectCharacter(characters: playerOne.characters)
             checkChest(selectedCharacter: ownCharacter)
-            if ownCharacter is Mage {
-                let opponentCharacter = playerOne.selectCharacter(characters: playerOne.characters)
+    
+            let opponentCharacter =  playerOne.selectCharacter(characters: playerTwo.characters)
                 ownCharacter.attack(target: opponentCharacter)
-            } else {
-                let opponentCharacter =  playerOne.selectCharacter(characters: playerTwo.characters)
-                ownCharacter.attack(target: opponentCharacter)
-            }
+            
             playerTwo.checkTeamLife()
             if checkWinner() == true {
                 break
