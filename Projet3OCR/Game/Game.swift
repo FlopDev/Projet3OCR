@@ -53,14 +53,14 @@ class Game {
     func play() {
         print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
         while playerOne.characters.count != 0 || playerTwo.characters.count != 0  {
-
+            
             print("\(playerOne.name) choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
-             let ownCharacter = playerOne.selectCharacter(characters: playerOne.characters)
+            let ownCharacter = playerOne.selectCharacter(characters: playerOne.characters, selectedCharacter: nil)
             checkChest(selectedCharacter: ownCharacter)
-    
-            let opponentCharacter =  playerOne.selectCharacter(characters: playerTwo.characters)
-                ownCharacter.attack(target: opponentCharacter)
+            
+            let opponentCharacter =  playerOne.selectCharacter(characters: playerTwo.characters, selectedCharacter: ownCharacter)
+            ownCharacter.attack(target: opponentCharacter)
             
             playerTwo.checkTeamLife()
             if checkWinner() == true {
@@ -68,7 +68,9 @@ class Game {
             }
             swap(&playerOne, &playerTwo)
         }
+        //game's end
         print("Le jeu est terminé")
+        print("Bravo !")
         
     }
     
@@ -80,7 +82,7 @@ class Game {
             return true
             
         }
-        if playerOne.characters.isEmpty { 
+        if playerOne.characters.isEmpty {
             print("Le joueur 1 n'a plus de personnages dans son équipe")
             print("Le joueur 2 a gagné")
             return true
@@ -91,12 +93,10 @@ class Game {
     // func who give a random number (1/3) then if the player is lucky, his character open the chest with openChest()
     func checkChest(selectedCharacter: Character) {
         let randomNumber = Int(arc4random_uniform(3))
-
+        
         if randomNumber == 0 {
             let newChest = Chest(selectedCharacter: selectedCharacter)
             selectedCharacter.openChest(chest: newChest)
-        } else {
-            print("")
         }
     }
 }

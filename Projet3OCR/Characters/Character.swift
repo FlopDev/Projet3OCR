@@ -15,7 +15,7 @@ class Character {
     var name: String
     var typeName: String
     var weapon: Weapon?
-  
+    
     init(name: String, damage: Int, life: Int, typeName: String) {
         self.name = name
         self.damage = damage
@@ -24,20 +24,31 @@ class Character {
     }
     
     // Func who give a name to a character FROM the player
-    // Je peux pas comparer aux autres characters car je n'ait pas acces a [characters] car pas envoyé en parametre
-    func namedCharacter(arrayOfCharacters: [Character]) {
+    func namedCharacter() {
         print("\nVeuillez me donner un nom :\n")
-        
         if let characterName = readLine() {
             name = characterName
-            print("\nJe suis un \(typeName), je m'appelle \(name) je dispose de \(life)HP et \(damage)DGT\n")
         }
+        
     }
-
+    
+    func validateCharacterName(arrayOfCharacters : [Character]) -> Bool {
+        
+        for character in arrayOfCharacters {
+            if character.name == name {
+                print("Vous vous êtes trompés, veuilez en choisir un autre")
+                return false
+            }
+        }
+        print("\nJe suis un \(typeName), je m'appelle \(name) je dispose de \(life)HP et \(damage)DGT\n")
+        return true
+        
+    }
+    
     func openChest(chest : Chest) {
         
-            weapon = chest.weapon
-            print("Grâce à mon épée, mes nouveaux dégats s'élèvent à \(damage + chest.weapon.damage)DGT")
+        weapon = chest.weapon
+        print("Grâce à mon épée, mes nouveaux dégats s'élèvent à \(damage + chest.weapon.damage)DGT")
     }
     
     // after the selection of a character and a target, the func attack()
@@ -51,7 +62,5 @@ class Character {
             target.life = target.life - damage
             print("\(target.name) perd \(damage)HP")
         }
-        
     }
 }
-

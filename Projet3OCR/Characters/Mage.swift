@@ -9,10 +9,18 @@
 import Foundation
 
 class Mage : Character {
-    var heal: Int = 15
+    var heal: Int = 10
     
     init() {
         super.init(name: "Mage", damage: 0, life: 75, typeName: "Mage")
+    }
+    
+    override func openChest(chest: Chest) {
+        
+        weapon = chest.weapon
+        if let wand = weapon as? Wand {
+            print("Grâce à mon Baton, mes nouveaux soins s'élèvent à \(self.heal + wand.weaponHeal)")
+        }
     }
     
     override func attack(target: Character) {
@@ -26,13 +34,5 @@ class Mage : Character {
             print("\(target.name) gagne \(self.heal)HP")
         }
     }
-    override func openChest(chest: Chest) {
-       
-            weapon = chest.weapon
-            if let wand = weapon as? Wand {
-                print("Grâce à mon Baton, mes nouveaux soins s'élèvent à \(self.heal + wand.weaponHeal)")
-            }
-    }
 }
-
 

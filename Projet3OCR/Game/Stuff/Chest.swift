@@ -21,7 +21,7 @@ class Chest {
             
         } else {
             print("\(selectedCharacter.name) recoit une épée, et s'en équipe")
-           weapon = Sword()
+            weapon = Sword()
         }
     }
 }

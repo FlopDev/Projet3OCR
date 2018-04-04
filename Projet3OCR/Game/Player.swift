@@ -35,24 +35,32 @@ class Player {
             switch choice {
                 
             case 1:
-                let figther = Fighter()
-                figther.namedCharacter(arrayOfCharacters: characters)
-                characters.append(figther)
+                let fighter = Fighter()
+                fighter.namedCharacter()
+                if fighter.validateCharacterName(arrayOfCharacters: self.characters) == true {
+                    characters.append(fighter)
+                }
                 
             case 2:
-                let colossus = Colossus() 
-                colossus.namedCharacter(arrayOfCharacters: characters)
-                characters.append(colossus)
+                let colossus = Colossus()
+                colossus.namedCharacter()
+                if colossus.validateCharacterName(arrayOfCharacters: self.characters) == true {
+                    characters.append(colossus)
+                }
                 
             case 3:
                 let dwarf = Dwarf()
-                dwarf.namedCharacter(arrayOfCharacters: characters)
-                characters.append(dwarf)
+                dwarf.namedCharacter()
+                if dwarf.validateCharacterName(arrayOfCharacters: self.characters) == true {
+                    characters.append(dwarf)
+                }
                 
             case 4:
                 let mage = Mage()
-                mage.namedCharacter(arrayOfCharacters: characters)
-                characters.append(mage)
+                mage.namedCharacter()
+                if mage.validateCharacterName(arrayOfCharacters: self.characters) == true {
+                    characters.append(mage)
+                }
                 
             default:
                 print("Vous vous êtes trompé\n")
@@ -82,23 +90,28 @@ class Player {
     }
     
     // Select a character in own team of each player, then the character selected (perso) is return, and will fight a target.
-    func selectCharacter(characters: [Character]) -> Character {
+    func selectCharacter(characters: [Character], selectedCharacter: Character?) -> Character {
         var perso = Character(name: "", damage: 0, life: 0, typeName: "")
         var addition = 1
         var characterSelected = false
         var tmpCharacters = characters
         
-        // if let mageCharacter = selectedCharacter as? Mage {
-          //  print("Veuillez choisir un joueur de votre équipe à soigner avec votre mage \(mageCharacter.name):")
-          //  tmpCharacters = self.characters
-    //}
+        // 1rst condition, if selectedCharacter is a Mage : do this
+        if let mageCharacter = selectedCharacter as? Mage {
+            print("Veuillez choisir un joueur de votre équipe à soigner avec votre mage \(mageCharacter.name):")
+            tmpCharacters = self.characters
+            
+            // 2nd condition if selectedCharacter is another character other than a Mage and different of nothing
+        } else if selectedCharacter != nil {
+            print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
+        }
         
-        for character in characters {
+        for character in tmpCharacters {
             print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName)")
             addition += 1
         }
         
-        while !characterSelected {
+        while characterSelected == false {
             if let readline = readLine() {
                 if let choice = Int(readline) {
                     if choice <= 3 && choice >= 1 {
@@ -120,9 +133,10 @@ class Player {
                             print("Vous vous êtes trompés")
                         }
                         
+                        // else of the condition >1 / <3
                     } else {
                         print("Le numero du personnage choisit doit être comprit entre 1 et 3")
-                        characterSelected = false
+                        
                     }
                 }
             }
@@ -130,60 +144,6 @@ class Player {
         return perso
     }
     
-    // Fusionner selectCharacter() et selectTarget() pour n'en faire qu'une seule qu'y s'appelera selectCharacter() et qui sera encore plus courte
-
-    // same that selectedCharacter(), but this func return a target that will be hurt by the perso
-    func selectTarget(characters: [Character], selectedCharacter: Character) -> Character {
-        var tmpCharacters = characters
-        var characterSelected = false
-        
-        if let mageCharacter = selectedCharacter as? Mage {
-            print("Veuillez choisir un joueur de votre équipe à soigner avec votre mage \(mageCharacter.name):")
-            tmpCharacters = self.characters
-         
-        } else {
-            print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
-        }
-        
-        var target = Character(name: "", damage: 0, life: 0, typeName: "")
-        var addition = 1
-        
-        for character in tmpCharacters {
-            print("Veuillez rentrer \(addition) pour \(character.name), \(character.typeName), \(character.life)HP, \(character.damage)DGT")
-            addition += 1
-        }
-        
-        while !characterSelected {
-            if let readline = readLine() {
-                if let choice = Int(readline) {
-                    if choice <= 3 && choice >= 1 {
-                        switch choice {
-                            
-                        case 1:
-                            target = tmpCharacters[0]
-                            characterSelected = true
-                            
-                        case 2:
-                            target = tmpCharacters[1]
-                            characterSelected = true
-                            
-                        case 3:
-                            target = tmpCharacters[2]
-                            characterSelected = true
-                            
-                        default:
-                            print("Vous vous êtes trompés")
-                        }
-                        
-                    } else {
-                        print("Le numero du personnage choisit doit être comprit entre 1 et 3")
-                        characterSelected = false
-                    }
-                }
-            }
-        }
-        return target
-    }
     
     // func who check if a character is dead   //we go out from the for if 1 character is dead
     func checkTeamLife() {
@@ -193,7 +153,7 @@ class Player {
             if characters[incremention].life <= 0 {
                 print("\(characters[incremention].name) n'a plus de vie... Il meurt !")
                 characters.remove(at: incremention)
-              
+                
                 break
             } else {
                 print("")
