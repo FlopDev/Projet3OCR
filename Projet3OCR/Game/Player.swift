@@ -115,23 +115,8 @@ class Player {
             if let readline = readLine() {
                 if let choice = Int(readline) {
                     if choice <= 3 && choice >= 1 {
-                        switch choice {
-                            
-                        case 1:
-                            perso = tmpCharacters[0]
-                            characterSelected = true
-                            
-                        case 2:
-                            perso = tmpCharacters[1]
-                            characterSelected = true
-                            
-                        case 3:
-                            perso = tmpCharacters[2]
-                            characterSelected = true
-                            
-                        default:
-                            print("Vous vous êtes trompés")
-                        }
+                        perso = tmpCharacters[choice - 1]
+                        characterSelected = true
                         
                         // else of the condition >1 / <3
                     } else {
