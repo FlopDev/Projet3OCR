@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Fighter : Character {
+class Fighter: Character {
     
     init() {
-        super.init(name: "Combattant", damage: 10, life: 100, typeName: "Combattant") // fighter's propriety
+        super.init(name: "Combattant", damage: 10, life: 100, typeName: "Combattant")
     }
 }

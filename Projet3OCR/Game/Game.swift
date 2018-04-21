@@ -10,8 +10,10 @@ import Foundation
 
 class Game {
     
-    // Create my two players
+    // Create player 1
     var playerOne: Player
+    
+    // Create Player 2
     var playerTwo: Player
     
     init() {
@@ -50,12 +52,14 @@ class Game {
         playerTwo.chooseTeam()
     }
     
+    // After the selection of 3 character per player, we can attack !!
     func play() {
         print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
+        
         while playerOne.characters.count != 0 || playerTwo.characters.count != 0  {
-            
             print("\(playerOne.name) choisit un personnage de son équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas du mage.")
             playerOne.teamView()
+            
             let ownCharacter = playerOne.selectCharacter(characters: playerOne.characters, selectedCharacter: nil)
             checkChest(selectedCharacter: ownCharacter)
             
@@ -66,31 +70,34 @@ class Game {
             if checkWinner() == true {
                 break
             }
+            
             swap(&playerOne, &playerTwo)
         }
-        //game's end
+        
         print("Le jeu est terminé")
         print("Bravo !")
-        
     }
     
-    // I need ton return boolean for create a condition to break IF one team win
+    // func who check if a Player wins (if ha player don't have any character in his array, he lost
     func checkWinner() -> Bool {
         if playerTwo.characters.isEmpty {
             print("Le joueur 2 n'a plus de personnages dans son équipe")
             print("Le joueur 1 a gagné")
-            return true
             
+            return true
         }
+        
         if playerOne.characters.isEmpty {
             print("Le joueur 1 n'a plus de personnages dans son équipe")
             print("Le joueur 2 a gagné")
+            
             return true
         }
+        
         return false
     }
     
-    // func who give a random number (1/3) then if the player is lucky, his character open the chest with openChest()
+    // func who create a random number. If the player is lucky, his character open the chest with openChest()
     func checkChest(selectedCharacter: Character) {
         let randomNumber = Int(arc4random_uniform(3))
         

@@ -10,8 +10,11 @@ import Foundation
 
 // We have got 2 players in this game
 class Player {
+    
+    // Each player have a name, "Joueur 1" and "Joueur 2"
     var name: String
-    // We create this array to add the chozen characters of each players
+    
+    // A array which contains the characters of each team
     var characters: [Character] = []
     
     init(name: String) {
@@ -29,46 +32,55 @@ class Player {
         )
     }
     
-    // First step of each player, this func tel which character is avalaible and pick one if the player choose one.
+    // First step of each player, this func create the character (fighter, colossus, etc...) and name it
     func chooseCharacter() {
-        if let choice = Int(readLine()!) {
-            switch choice {
+        if let readline = readLine() {
+            if let choice = Int(readline) {
                 
-            case 1:
-                let fighter = Fighter()
-                fighter.namedCharacter()
-                if fighter.validateCharacterName(arrayOfCharacters: self.characters) == true {
-                    characters.append(fighter)
+                
+                
+                switch choice {
+                    
+                case 1:
+                    let fighter = Fighter()
+                    
+                    fighter.namedCharacter()
+                    if fighter.validateCharacterName(arrayOfCharacters: self.characters) == true {
+                        characters.append(fighter)
+                    }
+                    
+                case 2:
+                    let colossus = Colossus()
+                    
+                    colossus.namedCharacter()
+                    if colossus.validateCharacterName(arrayOfCharacters: self.characters) == true {
+                        characters.append(colossus)
+                    }
+                    
+                case 3:
+                    let dwarf = Dwarf()
+                    
+                    dwarf.namedCharacter()
+                    if dwarf.validateCharacterName(arrayOfCharacters: self.characters) == true {
+                        characters.append(dwarf)
+                    }
+                    
+                case 4:
+                    let mage = Mage()
+                    
+                    mage.namedCharacter()
+                    if mage.validateCharacterName(arrayOfCharacters: self.characters) == true {
+                        characters.append(mage)
+                    }
+                    
+                default:
+                    print("Vous vous êtes trompé\n")
                 }
-                
-            case 2:
-                let colossus = Colossus()
-                colossus.namedCharacter()
-                if colossus.validateCharacterName(arrayOfCharacters: self.characters) == true {
-                    characters.append(colossus)
-                }
-                
-            case 3:
-                let dwarf = Dwarf()
-                dwarf.namedCharacter()
-                if dwarf.validateCharacterName(arrayOfCharacters: self.characters) == true {
-                    characters.append(dwarf)
-                }
-                
-            case 4:
-                let mage = Mage()
-                mage.namedCharacter()
-                if mage.validateCharacterName(arrayOfCharacters: self.characters) == true {
-                    characters.append(mage)
-                }
-                
-            default:
-                print("Vous vous êtes trompé\n")
             }
         }
     }
     
-    // Player can see his full team of 3 characters, their lifes, domages, and names or the opponent team.
+    // this func show the team of each player (name, typename, life and domages)
     func teamView() {
         print("Voici les trois personnages :")
         
@@ -77,7 +89,7 @@ class Player {
         }
     }
     
-    // func who tel which characters the player can choose, and chose character. each players needs 3 characters, then he see his full team.
+    // func who create the team of each player and show it
     func chooseTeam() {
         let maxCharacter = 3
         
@@ -95,13 +107,10 @@ class Player {
         var addition = 1
         var characterSelected = false
         var tmpCharacters = characters
-        
-        // 1rst condition, if selectedCharacter is a Mage : do this
+   
         if let mageCharacter = selectedCharacter as? Mage {
             print("Veuillez choisir un joueur de votre équipe à soigner avec votre mage \(mageCharacter.name):")
             tmpCharacters = self.characters
-            
-            // 2nd condition if selectedCharacter is another character other than a Mage and different of nothing
         } else if selectedCharacter != nil {
             print("Veuillez maintenant choisir un joueur de l'équipe adverse :")
         }
@@ -117,20 +126,17 @@ class Player {
                     if choice <= 3 && choice >= 1 {
                         perso = tmpCharacters[choice - 1]
                         characterSelected = true
-                        
-                        // else of the condition >1 / <3
                     } else {
                         print("Le numero du personnage choisit doit être comprit entre 1 et 3")
-                        
                     }
                 }
             }
         }
+        
         return perso
     }
-    
-    
-    // func who check if a character is dead   //we go out from the for if 1 character is dead
+
+    // func who check if a character is dead and remove it if he is.
     func checkTeamLife() {
         var incremention = 0
         
@@ -142,8 +148,8 @@ class Player {
                 break
             } else {
                 print("")
-                
             }
+            
             incremention += 1
         }
     }

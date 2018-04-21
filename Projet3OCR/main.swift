@@ -10,28 +10,16 @@ import Foundation
 
 
 /*
- ETAPE 1 : Les équipes :
- - premierement parler de la creation des characteres et de leur classe mere + définir la classe Player et Game
- - nommer les character, fonction namedCharacter() + validateCharacterName()
- - creation de l'équipe de chaques joueurs, func character'sList() + chooseCharacter() et dans l'encapsulement dans la func chooseTeam() qui contient teamview.
- 
- ETAPE 2 : Au combat :
- - Parler de la func play()
- - selectCharacter()
- - attack()
- - checkTeamLife()
- 
- ETAPE 3 : Changeons d'arme :
- - Parler des Weapons() et de leur classe Mère
- - lors de la selection du perso, parler de la func checkChest() et openChest()
+ commentaire au dessus de la classe pour décrire la classe
+ commentaire au dessus de chaque variable de classe // TOTO, pour décrire a quoi elles servent
+ commentaire au dessus de chaque fonction pour décrire a quoi elles servent
+ le commentaire ne doit pas depasser une ligne, et en anglais.
  
  
+ REFLECHIR AU BONUS ET POURQUOI PAS LE METTRE EN PLACE
  */
 
-
-// I create the game
+// Creating a Game objet and launch the game
 let game = Game()
-
-// launching game
 game.start()
 

@@ -13,6 +13,10 @@
 		CB22DA381F90D458006D388F /* Colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22DA371F90D458006D388F /* Colossus.swift */; };
 		CB22DA3A1F90D46C006D388F /* Fighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22DA391F90D46C006D388F /* Fighter.swift */; };
 		CB27437F1FD9DD2E00B8AF83 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB27437E1FD9DD2E00B8AF83 /* Player.swift */; };
+		CB28E8E82088C19100A1FE0D /* Fairy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28E8E72088C19100A1FE0D /* Fairy.swift */; };
+		CB28E8EA20896D8A00A1FE0D /* Fire Fairy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28E8E920896D8A00A1FE0D /* Fire Fairy.swift */; };
+		CB28E8EC20896DA000A1FE0D /* Earth Fairy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28E8EB20896DA000A1FE0D /* Earth Fairy.swift */; };
+		CB28E8EF20896DB600A1FE0D /* Water Fairy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28E8EE20896DB600A1FE0D /* Water Fairy.swift */; };
 		CB2F37E81F8BBDED004B2B66 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2F37E71F8BBDED004B2B66 /* main.swift */; };
 		CB2F37EF1F8BBE33004B2B66 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2F37EE1F8BBE33004B2B66 /* Weapon.swift */; };
 		CB2F37F11F8BBE3E004B2B66 /* Mage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2F37F01F8BBE3E004B2B66 /* Mage.swift */; };
@@ -40,6 +44,10 @@
 		CB22DA371F90D458006D388F /* Colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colossus.swift; sourceTree = "<group>"; };
 		CB22DA391F90D46C006D388F /* Fighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fighter.swift; sourceTree = "<group>"; };
 		CB27437E1FD9DD2E00B8AF83 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		CB28E8E72088C19100A1FE0D /* Fairy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fairy.swift; sourceTree = "<group>"; };
+		CB28E8E920896D8A00A1FE0D /* Fire Fairy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fire Fairy.swift"; sourceTree = "<group>"; };
+		CB28E8EB20896DA000A1FE0D /* Earth Fairy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Earth Fairy.swift"; sourceTree = "<group>"; };
+		CB28E8EE20896DB600A1FE0D /* Water Fairy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Water Fairy.swift"; sourceTree = "<group>"; };
 		CB2F37E41F8BBDED004B2B66 /* Projet3OCR */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Projet3OCR; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2F37E71F8BBDED004B2B66 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		CB2F37EE1F8BBE33004B2B66 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
@@ -115,6 +123,10 @@
 				CB0978892023BA9900A60C6B /* Wand.swift */,
 				CB79AF2620112A1600F4404E /* Sword.swift */,
 				CB09788B2023C5A300A60C6B /* Chest.swift */,
+				CB28E8E72088C19100A1FE0D /* Fairy.swift */,
+				CB28E8E920896D8A00A1FE0D /* Fire Fairy.swift */,
+				CB28E8EB20896DA000A1FE0D /* Earth Fairy.swift */,
+				CB28E8EE20896DB600A1FE0D /* Water Fairy.swift */,
 			);
 			path = Stuff;
 			sourceTree = "<group>";
@@ -183,11 +195,15 @@
 				CB09788A2023BA9900A60C6B /* Wand.swift in Sources */,
 				CB22DA361F90D43D006D388F /* Dwarf.swift in Sources */,
 				CBC133AD1FA3AFBD00026DE7 /* Character.swift in Sources */,
+				CB28E8E82088C19100A1FE0D /* Fairy.swift in Sources */,
 				CB79AF2720112A1600F4404E /* Sword.swift in Sources */,
 				CB2F37E81F8BBDED004B2B66 /* main.swift in Sources */,
 				CB2F37EF1F8BBE33004B2B66 /* Weapon.swift in Sources */,
+				CB28E8EF20896DB600A1FE0D /* Water Fairy.swift in Sources */,
+				CB28E8EA20896D8A00A1FE0D /* Fire Fairy.swift in Sources */,
 				CB09788C2023C5A300A60C6B /* Chest.swift in Sources */,
 				CB27437F1FD9DD2E00B8AF83 /* Player.swift in Sources */,
+				CB28E8EC20896DA000A1FE0D /* Earth Fairy.swift in Sources */,
 				CB925A141FA22910006D6384 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

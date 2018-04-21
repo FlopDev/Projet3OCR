@@ -8,21 +8,25 @@
 
 import Foundation
 
-class Mage : Character {
+class Mage: Character {
+    
+    // we create the heal
     var heal: Int = 10
     
     init() {
         super.init(name: "Mage", damage: 0, life: 75, typeName: "Mage")
     }
     
+    // we write the own version of the openChest, for giving to the mage a Wand
     override func openChest(chest: Chest) {
-        
         weapon = chest.weapon
+    
         if let wand = weapon as? Wand {
             print("Grâce à mon Baton, mes nouveaux soins s'élèvent à \(self.heal + wand.weaponHeal)")
         }
     }
     
+    // The mage will heal the target (who is a character from the mage team)
     override func attack(target: Character) {
         print("\(name), soigne \(target.name)")
         
