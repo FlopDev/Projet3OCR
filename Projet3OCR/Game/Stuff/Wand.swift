@@ -8,6 +8,7 @@
 
 import Foundation
 
+// This is a Wand for the Mage (he will equip a Wand if he openChest())
 class Wand: Weapon {
     
     // the mage needs to heal, so we create a var weaponHeal, and initilize his dommage at zero

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Projet3OCR/Characters/Character.swift"
-            timestampString = "546005541.8939461"
+            timestampString = "546840955.876999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -19,7 +19,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Projet3OCR.Character.chooseFairy() -&gt; ()"
@@ -34,7 +34,7 @@
                   offsetFromSymbolStart = "1841">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Projet3OCR.Character.chooseFairy() -&gt; ()"

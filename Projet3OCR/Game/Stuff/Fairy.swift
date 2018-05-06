@@ -10,6 +10,8 @@ import Foundation
 
 // Main class of all Fairy class
 class Fairy {
+    
+    // each fairy can boost one of this attributes
     var lifeUp: Int
     var damageUp: Int
     var healUp: Int

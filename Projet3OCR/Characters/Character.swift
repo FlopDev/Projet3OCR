@@ -77,7 +77,7 @@ class Character {
             selectCharacter.heal = selectCharacter.heal + fairy.healUp
             
         } else {
-            print("Veuillez choisir entre une Fée Feu qui boost l'attaque de votre \(typeName) (20ATK) ou une Fée Terre qui boost votre vie (20HP)")
+            print("Veuillez choisir entre une Fée Feu qui boost l'attaque de votre \(typeName) (20DGT) ou une Fée Terre qui boost votre vie (20HP)")
             print("Entrez 1 pour Fée Feu")
             print("Entrez 2 pour Fée Terre")
             
@@ -93,8 +93,8 @@ class Character {
                     fairy = EarthFairy()
                     self.life = self.life + fairy.lifeUp
                         
-                    default : print("Vous vous êtes trompés")
-                        
+                    default:
+                        print("Vous vous êtes trompés")
                     }
                 }
             }

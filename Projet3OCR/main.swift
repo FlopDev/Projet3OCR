@@ -10,13 +10,17 @@ import Foundation
 
 
 /*
- commentaire au dessus de la classe pour décrire la classe
- commentaire au dessus de chaque variable de classe // TOTO, pour décrire a quoi elles servent
- commentaire au dessus de chaque fonction pour décrire a quoi elles servent
- le commentaire ne doit pas depasser une ligne, et en anglais.
  
+ // Refaire mes commentaires
  
- REFLECHIR AU BONUS ET POURQUOI PAS LE METTRE EN PLACE
+1) Présentation du Bonus
+ 2/3 lignes d'explication globale du bonus
+ 
+2) Intégration du Bonus
+ Comment le bonus a t'il été implémenter dans le code
+ 
+3) Exemple de fonctionnement
+ screen ce qu'il se passe (screen des 3 fées)
  */
 
 // Creating a Game objet and launch the game

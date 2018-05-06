@@ -8,6 +8,7 @@
 
 import Foundation
 
+// The chest will be open if the players are lucky. If the character is a mage, else we give him a sword
 class Chest {
     
     // create a var of type Weapon who contain the Wand or the Sword

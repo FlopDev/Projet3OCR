@@ -52,7 +52,7 @@ class Game {
         playerTwo.chooseTeam()
     }
     
-    // After the selection of 3 character per player, we can attack !!
+    // All steps contained in a round during the game, used as a loop switching the players between turns
     func play() {
         print("\nMaintenant que vous avez constitués vos deux équipes, à l'attaque !!!\n")
         
@@ -99,7 +99,7 @@ class Game {
     
     // func who create a random number. If the player is lucky, his character open the chest with openChest()
     func checkChest(selectedCharacter: Character) {
-        let randomNumber = Int(arc4random_uniform(3))
+        let randomNumber = Int(arc4random_uniform(10))
         
         if randomNumber == 0 {
             let newChest = Chest(selectedCharacter: selectedCharacter)

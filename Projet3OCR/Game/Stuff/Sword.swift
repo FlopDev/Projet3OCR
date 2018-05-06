@@ -8,6 +8,7 @@
 
 import Foundation
 
+// This is the Sword for all the other class
 class Sword: Weapon {
     
     init() {

@@ -25,10 +25,10 @@ class Player {
     func charactersList() {
         print("\nVous avez actuellement \(characters.count) personnage(s) dans votre équipe (\(characters.count)/3)\n")
         print(""
-            + "\n1. Rentrer 1 pour choisir un Combattant (100HP;25DGT)"
-            + "\n2. Rentrer 2 pour choisir un Colosse (105HP;15DGT)"
-            + "\n3. Rentrer 3 pour choisir un Nain (95HP;30DGT)"
-            + "\n4. Rentrer 4 pour choisir un Mage (75HP;15SOIN)\n"
+            + "\n1. Rentrer 1 pour choisir un Combattant (100HP;10DGT)"
+            + "\n2. Rentrer 2 pour choisir un Colosse (150HP;5DGT)"
+            + "\n3. Rentrer 3 pour choisir un Nain (80HP;15DGT)"
+            + "\n4. Rentrer 4 pour choisir un Mage (75HP;10SOIN)\n"
         )
     }
     
@@ -36,9 +36,6 @@ class Player {
     func chooseCharacter() {
         if let readline = readLine() {
             if let choice = Int(readline) {
-                
-                
-                
                 switch choice {
                     
                 case 1:
