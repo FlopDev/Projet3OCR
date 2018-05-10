@@ -8,6 +8,7 @@
 
 import Foundation
 
+// FireFairy class, heriting from Fairy class
 class FireFairy: Fairy {
     
     init() {

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Fighter class, heriting from Character class
 class Fighter: Character {
     
     init() {

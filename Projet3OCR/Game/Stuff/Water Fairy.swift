@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Water fairy class, heriting from Fairy class
 class WaterFairy: Fairy {
     
     init() {

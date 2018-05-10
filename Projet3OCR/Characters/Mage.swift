@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Mage class, heriting from Character class
 class Mage: Character {
     
     // we create the heal

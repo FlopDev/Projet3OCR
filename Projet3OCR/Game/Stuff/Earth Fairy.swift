@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Earth fairy class, heriting from Fairy class
 class EarthFairy: Fairy {
     
     init() {

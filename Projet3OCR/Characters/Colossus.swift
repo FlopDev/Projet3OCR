@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Colossus class, heriting from Character class
 class Colossus: Character {
 
     init() {
